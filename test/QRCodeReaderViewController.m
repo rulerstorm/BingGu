@@ -1,21 +1,21 @@
 //
-//  MainViewController.m
+//  QRCodeReaderViewController.m
 //  test
 //
 //  Created by RockLu on 10/4/15.
 //  Copyright © 2015 RockLu. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "QRCodeReaderViewController.h"
 #import "HMAudioTool.h"
 
-@interface MainViewController ()
+@interface QRCodeReaderViewController ()
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
 @property (weak, nonatomic) IBOutlet UILabel *mainLabel;
 
 @end
 
-@implementation MainViewController
+@implementation QRCodeReaderViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,15 +25,27 @@
     _previewLayer.frame = _cameraView.bounds;
     [_cameraView.layer addSublayer:_previewLayer];
     
+//    NSLog(@"sdfs");
     
     // turn on and off the camera if this app goes into the background/foreground.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
-    
-    
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
     //start scan~~~~
     [self startRunning];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self stopRunning];
 }
 
 - (void)didReceiveMemoryWarning {

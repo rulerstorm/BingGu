@@ -1,5 +1,5 @@
 //
-//  MainViewController.h
+//  QRCodeReaderViewController.h
 //  test
 //
 //  Created by RockLu on 10/4/15.
@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 
 
-@interface MainViewController : UIViewController<AVCaptureMetadataOutputObjectsDelegate>
+@interface QRCodeReaderViewController : UIViewController<AVCaptureMetadataOutputObjectsDelegate>
 @property (strong, nonatomic) AVCaptureSession *captureSession;
 @property (strong, nonatomic) AVCaptureDevice *videoDevice;
 @property (strong, nonatomic) AVCaptureDeviceInput *videoInput;
@@ -18,5 +18,7 @@
 @property (strong, nonatomic) AVCaptureMetadataOutput *metadataOutput;
 
 @property BOOL isRunning;
+
+- (void)stopRunning; 
 
 @end
