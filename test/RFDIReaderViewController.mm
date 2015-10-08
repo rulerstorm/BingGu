@@ -879,8 +879,8 @@
             [_responseCondition lock];
             
             // Wait for the PICC response APDU.
-            while (!_piccResponseApduReady || !_resultReady) {
-                if (![_responseCondition waitUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]]) {
+            while (!_piccResponseApduReady || !_resultReady) {   //used to be a &&
+                if (![_responseCondition waitUntilDate:[NSDate dateWithTimeIntervalSinceNow:1]]) { //used to be 10
                     break;
                 }
             }
