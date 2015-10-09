@@ -646,7 +646,7 @@
     _piccCommandApdu = [AJDHex byteArrayFromHexString:@"FF CA 00 00 00"];
     
     // Listen the audio route change.
-    AudioSessionAddPropertyListener(kAudioSessionProperty_AudioRouteChange, AJDAudioRouteChangeListener, (__bridge void *) self);
+//    AudioSessionAddPropertyListener(kAudioSessionProperty_AudioRouteChange, AJDAudioRouteChangeListener, (__bridge void *) self);
     
     _swipeCount = 0;
     

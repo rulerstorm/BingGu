@@ -95,7 +95,7 @@ class CheckTicketViewController: UIViewController {
         self.view.addSubview(hud)
         hud.showAnimated(true, whileExecutingBlock: { () -> Void in
 //            self.QRController.stopRunning()
-            sleep(1)
+            usleep(500)
             }) { [unowned self] () -> Void in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: false)
                 self.buttonRFDISelected = false
@@ -106,7 +106,7 @@ class CheckTicketViewController: UIViewController {
     
     //two inner view controlers
     let QRController = QRCodeReaderViewController()
-    let RFDIController = RFDIReaderViewController()
+    var RFDIController = RFDIReaderViewController()
     
     
     @IBOutlet weak var viewCenterWhite: UIView!
