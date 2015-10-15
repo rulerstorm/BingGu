@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "AudioJack/AudioJack.h"
+#import "MBProgressHUD.h"
 
-@interface RFDIViewController : UIViewController <ACRAudioJackReaderDelegate>
+@interface RFDIViewController : UIViewController <MBProgressHUDDelegate,ACRAudioJackReaderDelegate>
 
-@end
+@end 

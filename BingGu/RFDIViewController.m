@@ -7,33 +7,215 @@
 //
 
 #import "RFDIViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
+#import <MediaPlayer/MediaPlayer.h>
+#import "AJDHex.h"
 
-@interface RFDIViewController ()
+#define TTT 100  //waiting length
+
+
+@interface RFDIViewController (){
+        MBProgressHUD *HUD;
+}
+@property (weak, nonatomic) IBOutlet UILabel *labelTest;
 
 @end
 
 @implementation RFDIViewController
 {
     ACRAudioJackReader *_reader;
+    BOOL _isReseted;        //reader is reseted
+    BOOL _isPowerOned;
+    BOOL _isTransmitReturned;
+    BOOL _resultNotified;
+    NSString * _outPut;
+    
+    BOOL _isRunning;
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"touch");
+
+}
+
+#pragma mark toolBox
+
+- (BOOL) ReaderIsPlugged {
+    BOOL plugged = NO;
+    CFStringRef route = NULL;
+    UInt32 routeSize = sizeof(route);
+    if (AudioSessionGetProperty(kAudioSessionProperty_AudioRoute, &routeSize, &route) == kAudioSessionNoError) {
+        if (CFStringCompare(route, CFSTR("HeadsetInOut"), kCFCompareCaseInsensitive) == kCFCompareEqualTo) {
+            plugged = YES;
+        }
+    }
+    return plugged;
+}
+
+- (void)setSystemVolumeToMax
+{
+    MPVolumeView *volumeView = [[MPVolumeView alloc] init];
+    UISlider* volumeViewSlider = nil;
+    for (UIView *view in [volumeView subviews]){
+        if ([view.class.description isEqualToString:@"MPVolumeSlider"]){
+            volumeViewSlider = (UISlider*)view;
+            break;
+        }
+    }
+    
+    // retrieve system volume
+    float systemVolume = volumeViewSlider.value;
+    
+    if (systemVolume < 1.0f) {
+        //save user volume
+//        _userVolume = systemVolume;
+        // change system volume, the value is between 0.0f and 1.0f
+        [volumeViewSlider setValue:1.0f animated:NO];
+        // send UI control event to make the change effect right now.
+        [volumeViewSlider sendActionsForControlEvents:UIControlEventTouchUpInside];
+    }
+    
+}
+
+
+
+
+- (void)waitReaderPluggedAndReset
+{
+    // activate the reader
+    _reader.mute = false;
+    
+    self.view.userInteractionEnabled = false;
+    
+    float progress = 0.0f;
+    HUD.mode = MBProgressHUDModeIndeterminate;
+    HUD.labelText = @"正在等待「音频读卡器」...";
+    
+    // waiting
+    while (![self ReaderIsPlugged]) {
+        sleep(1);
+    }
+    
+    HUD.mode = MBProgressHUDModeDeterminate;
+    
+    HUD.labelText = @"正在「连接」...";
+    while (progress < 0.3f) {
+        progress += 0.01f;
+        HUD.progress = progress;
+        usleep(200*TTT);
+    }
+    
+    HUD.labelText = @"正在「设置参数」...";
+    while (progress < 0.6f) {
+        progress += 0.01f;
+        HUD.progress = progress;
+        usleep(200*TTT);
+    }
+
+    
+    HUD.labelText = @"正在「启动读卡器」...";
+    // reset the reader
+    [_reader reset];
+    while (!_isReseted) {
+        usleep(100000);   //0.1s
+    }
+    
+
+    // power on thr reader
+//    if (![self powerOn]) {
+//        // faild case
+//        NSLog(@"power on error");
+//    }
+//    while (progress < 1.0f) {
+//        progress += 0.01f;
+//        HUD.progress = progress;
+//        usleep(300*TTT);
+//    }
+    
+    
+    self.view.userInteractionEnabled = true;
+    
+}
+
+
+
+- (void) runLoop
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        while (_isRunning) {
+            NSLog(@"looping...");
+            _isPowerOned = NO;
+            _isTransmitReturned = NO;
+            _resultNotified = NO;
+            
+            if (![self powerOn]) {
+                NSLog(@"powerOn error");
+            }else{
+                //wait powerOn
+                while (!_isPowerOned) {
+                    NSLog(@"waiting for _isPowerOned....");
+                    usleep(200000);   //0.2s
+                }
+                
+                if (![self transmit]) {
+                    NSLog(@"transmit error");
+                }else{
+                    
+                    //wait transmit
+                    while (!_isTransmitReturned) {
+                        NSLog(@"waiting for _isTransmitReturned....");
+                        usleep(200000);   //0.2s
+                    }
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        self.labelTest.text = _outPut;
+                    });
+                }
+            }
+        }
+    });
+}
+
+
+#pragma mark viewDidLoad
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-
-    
     // Initialize ACRAudioJackReader object.
     _reader = [[ACRAudioJackReader alloc] init];
     [_reader setDelegate:self];
     
+    //init HUD
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    HUD.delegate = self;
+    [self.view addSubview:HUD];
+    HUD.mode = MBProgressHUDModeDeterminate;
+    
 
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    _isRunning = YES;
+    
+    [self setSystemVolumeToMax];
+    //    [HUD showWhileExecuting:@selector(waitReaderPluggedAndReset) onTarget:self withObject:nil animated:YES];
+    [HUD showAnimated:YES whileExecutingBlock:^{
+        [self waitReaderPluggedAndReset];
+    } completionBlock:^{
+        [self runLoop];
+    }];
+    
+}
 
-
+- (void)viewWillDisappear:(BOOL)animated
+{
+    _isRunning = NO;
+}
 //@section reset Resetting the reader
 //
 //The sleep mode of reader is enabled by default. To use the reader, your
@@ -54,7 +236,8 @@
 - (void)readerDidReset:(ACRAudioJackReader *)reader {
     
     // TODO: Add code here to process the notification.
-
+    NSLog(@"didReset");
+    _isReseted = YES;
 }
 
 
@@ -217,12 +400,12 @@
 
 #pragma mark - Audio Jack Reader
 
-- (void)reader:(ACRAudioJackReader *)reader
-didSendRawData:(const uint8_t *)rawData length:(NSUInteger)length {
-    
-    // TODO: Add code here to process the raw data.
-    NSLog(@"didSendRowDate");
-}
+//- (void)reader:(ACRAudioJackReader *)reader
+//didSendRawData:(const uint8_t *)rawData length:(NSUInteger)length {
+//    
+//    // TODO: Add code here to process the raw data.
+//    NSLog(@"didSendRowData");
+//}
 
 
 
@@ -265,22 +448,22 @@ ACRPiccCardTypeIso14443TypeB |
 ACRPiccCardTypeFelica212kbps |
 ACRPiccCardTypeFelica424kbps |
 ACRPiccCardTypeAutoRats;
-uint8_t commandApdu[] = { 0x00, 0x84, 0x00, 0x00, 0x08 };
 
 
 
 // Power on the PICC.
-- (void)powerOn
+- (BOOL)powerOn
 {
-    [_reader piccPowerOnWithTimeout:timeout cardType:cardType];
+    NSLog(@"poweroning...");
+    return [_reader piccPowerOnWithTimeout:timeout cardType:cardType];
 }
 
 
 // Transmit the APDU.
-- (void)transmit
+- (BOOL)transmit
 {
-    [_reader piccTransmitWithTimeout:timeout commandApdu:commandApdu
-                              length:sizeof(commandApdu)];
+    NSLog(@"transmitting...");
+    return [_reader piccTransmitWithTimeout:timeout commandApdu:(u_int8_t*)[[AJDHex byteArrayFromHexString:@"FF CA 00 00 00"] bytes] length:[[AJDHex byteArrayFromHexString:@"FF CA 00 00 00"] length]];
 }
 
 
@@ -299,7 +482,9 @@ uint8_t commandApdu[] = { 0x00, 0x84, 0x00, 0x00, 0x08 };
 length:(NSUInteger)length {
     
     // TODO: Add code here to process the ATR.
-    NSLog(@"didSendPiccAtr");
+    NSLog(@"didSendPiccAtr, powerOn ok");
+    
+    _isPowerOned = YES;
 }
 
 - (void)reader:(ACRAudioJackReader *)reader
@@ -307,13 +492,24 @@ didSendPiccResponseApdu:(const uint8_t *)responseApdu
 length:(NSUInteger)length {
     
     // TODO: Add code here to process the response APDU.
-    NSLog(@"didSendPiccResponseApdu");
+    NSLog(@"didSendPiccResponseApdu, transmit ok。length:%lu", length);
+
+//    while (!_resultNotified) {
+//        usleep(200000);   //0.2s
+//    }
+    
+    _outPut = nil;
+    _outPut = [AJDHex hexStringFromByteArray:[NSData dataWithBytes:responseApdu length:length]];
+    NSLog(@"outPut:...%@", _outPut);
+    _isTransmitReturned = YES;
 }
 
 - (void)reader:(ACRAudioJackReader *)reader didNotifyResult:(ACRResult *)result {
     
+    _resultNotified = YES;
     // TODO: Add code here to process the notification.
-    NSLog(@"didNotifyResult");
+    NSLog(@"didNotifyResult, timeOut!!!");
+    [self powerOn];
 }
 
 

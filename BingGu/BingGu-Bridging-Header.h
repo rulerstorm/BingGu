@@ -3,5 +3,5 @@
 //
 
 #import "QRCodeReaderViewController.h"
-#import "RFDIReaderViewController.h"
+#import "RFDIViewController.h"
 #import "MBProgressHUD.h"

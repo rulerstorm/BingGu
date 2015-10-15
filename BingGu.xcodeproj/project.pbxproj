@@ -102,10 +102,10 @@
 				45673E391BCB5D1E0033F936 /* AppDelegate.m */,
 				45673E3A1BCB5D1E0033F936 /* RFDIReaderViewController.h */,
 				45673E3B1BCB5D1E0033F936 /* RFDIReaderViewController.mm */,
+				45673E3C1BCB5D1E0033F936 /* RFDIReaderViewController.xib */,
 				45673E601BCB605F0033F936 /* RFDIViewController.h */,
 				45673E611BCB605F0033F936 /* RFDIViewController.m */,
 				45673E621BCB605F0033F936 /* RFDIViewController.xib */,
-				45673E3C1BCB5D1E0033F936 /* RFDIReaderViewController.xib */,
 				45673E3D1BCB5D1E0033F936 /* QRCodeReaderViewController.h */,
 				45673E3E1BCB5D1E0033F936 /* QRCodeReaderViewController.m */,
 				45673E3F1BCB5D1E0033F936 /* QRCodeReaderViewController.xib */,
@@ -382,6 +382,7 @@
 				45673E361BCB5CC90033F936 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

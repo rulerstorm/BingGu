@@ -105,7 +105,7 @@ class CheckTicketViewController: UIViewController {
     
     //two inner view controlers
     let QRController = QRCodeReaderViewController()
-    var RFDIController :RFDIReaderViewController? = RFDIReaderViewController()
+    var RFDIController :RFDIViewController? = RFDIViewController()
     
     
     @IBOutlet weak var viewCenterWhite: UIView!
