@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckTicketViewController" customModule="碧盈谷" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckTicketViewController" customModule="BingGu" customModuleProvider="target">
             <connections>
                 <outlet property="ViewBar" destination="40z-oz-rAr" id="qd6-30-Pdi"/>
                 <outlet property="buttonQRCode" destination="1ku-ft-f8y" id="bur-id-A3j"/>

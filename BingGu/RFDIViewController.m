@@ -442,7 +442,7 @@
 
 
 
-NSUInteger timeout = 1; // 1 second.
+NSUInteger timeOut = 1; // 1 second.
 NSUInteger cardType = ACRPiccCardTypeIso14443TypeA |
 ACRPiccCardTypeIso14443TypeB |
 ACRPiccCardTypeFelica212kbps |
@@ -455,7 +455,7 @@ ACRPiccCardTypeAutoRats;
 - (BOOL)powerOn
 {
     NSLog(@"poweroning...");
-    return [_reader piccPowerOnWithTimeout:timeout cardType:cardType];
+    return [_reader piccPowerOnWithTimeout:timeOut cardType:cardType];
 }
 
 
@@ -463,7 +463,7 @@ ACRPiccCardTypeAutoRats;
 - (BOOL)transmit
 {
     NSLog(@"transmitting...");
-    return [_reader piccTransmitWithTimeout:timeout commandApdu:(u_int8_t*)[[AJDHex byteArrayFromHexString:@"FF CA 00 00 00"] bytes] length:[[AJDHex byteArrayFromHexString:@"FF CA 00 00 00"] length]];
+    return [_reader piccTransmitWithTimeout:timeOut commandApdu:(u_int8_t*)[[AJDHex byteArrayFromHexString:@"FF CA 00 00 00"] bytes] length:[[AJDHex byteArrayFromHexString:@"FF CA 00 00 00"] length]];
 }
 
 
@@ -492,7 +492,7 @@ didSendPiccResponseApdu:(const uint8_t *)responseApdu
 length:(NSUInteger)length {
     
     // TODO: Add code here to process the response APDU.
-    NSLog(@"didSendPiccResponseApdu, transmit ok。length:%lu", length);
+    NSLog(@"didSendPiccResponseApdu, transmit ok。length:%lu", (unsigned long)length);
 
 //    while (!_resultNotified) {
 //        usleep(200000);   //0.2s

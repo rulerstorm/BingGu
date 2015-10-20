@@ -7,9 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "QRCodeReaderViewController.h"
-
-#import "BingGu-Swift.h"
+#import "MainTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -22,8 +20,10 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen]bounds]];
 
-    self.window.rootViewController = [[CheckTicketViewController alloc]init];
+    self.window.rootViewController = [[MainTabBarController alloc]init];
 
+//    self.window.rootViewController = [[QRCodeReaderViewController alloc]init];
+    
     [self.window makeKeyAndVisible];
     
     return YES;

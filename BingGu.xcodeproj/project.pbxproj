@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		451D83441BD3BE7500207CF7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451D83431BD3BE7500207CF7 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
+		453D32011BD3C5780088271A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 453D32001BD3C5780088271A /* Default@2x.png */; settings = {ASSET_TAGS = (); }; };
 		45673E221BCB5CC90033F936 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45673E211BCB5CC90033F936 /* main.m */; };
 		45673E2D1BCB5CC90033F936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45673E2C1BCB5CC90033F936 /* Assets.xcassets */; };
-		45673E301BCB5CC90033F936 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45673E2E1BCB5CC90033F936 /* LaunchScreen.storyboard */; };
 		45673E481BCB5D1E0033F936 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45673E391BCB5D1E0033F936 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
-		45673E491BCB5D1E0033F936 /* RFDIReaderViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45673E3B1BCB5D1E0033F936 /* RFDIReaderViewController.mm */; settings = {ASSET_TAGS = (); }; };
-		45673E4A1BCB5D1E0033F936 /* RFDIReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45673E3C1BCB5D1E0033F936 /* RFDIReaderViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		45673E4B1BCB5D1E0033F936 /* QRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45673E3E1BCB5D1E0033F936 /* QRCodeReaderViewController.m */; settings = {ASSET_TAGS = (); }; };
 		45673E4C1BCB5D1E0033F936 /* QRCodeReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45673E3F1BCB5D1E0033F936 /* QRCodeReaderViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		45673E4D1BCB5D1E0033F936 /* CheckTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45673E401BCB5D1E0033F936 /* CheckTicketViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -28,20 +27,20 @@
 		45673E5F1BCB5E2B0033F936 /* libAudioJack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45673E5E1BCB5E2B0033F936 /* libAudioJack.a */; };
 		45673E631BCB605F0033F936 /* RFDIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45673E611BCB605F0033F936 /* RFDIViewController.m */; settings = {ASSET_TAGS = (); }; };
 		45673E641BCB605F0033F936 /* RFDIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45673E621BCB605F0033F936 /* RFDIViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		45ED85C41BD6EA12009A99B4 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED85C31BD6EA12009A99B4 /* MainTabBarController.m */; settings = {ASSET_TAGS = (); }; };
+		45ED85C71BD6EE22009A99B4 /* myTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED85C61BD6EE22009A99B4 /* myTabBarButton.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		451D83431BD3BE7500207CF7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		453D32001BD3C5780088271A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		45673E1D1BCB5CC90033F936 /* BingGu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BingGu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45673E211BCB5CC90033F936 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		45673E2C1BCB5CC90033F936 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		45673E2F1BCB5CC90033F936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45673E311BCB5CC90033F936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45673E371BCB5D1E0033F936 /* BingGu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BingGu-Bridging-Header.h"; sourceTree = "<group>"; };
 		45673E381BCB5D1E0033F936 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		45673E391BCB5D1E0033F936 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		45673E3A1BCB5D1E0033F936 /* RFDIReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFDIReaderViewController.h; sourceTree = "<group>"; };
-		45673E3B1BCB5D1E0033F936 /* RFDIReaderViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RFDIReaderViewController.mm; sourceTree = "<group>"; };
-		45673E3C1BCB5D1E0033F936 /* RFDIReaderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RFDIReaderViewController.xib; sourceTree = "<group>"; };
 		45673E3D1BCB5D1E0033F936 /* QRCodeReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderViewController.h; sourceTree = "<group>"; };
 		45673E3E1BCB5D1E0033F936 /* QRCodeReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderViewController.m; sourceTree = "<group>"; };
 		45673E3F1BCB5D1E0033F936 /* QRCodeReaderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QRCodeReaderViewController.xib; sourceTree = "<group>"; };
@@ -62,6 +61,10 @@
 		45673E601BCB605F0033F936 /* RFDIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFDIViewController.h; sourceTree = "<group>"; };
 		45673E611BCB605F0033F936 /* RFDIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFDIViewController.m; sourceTree = "<group>"; };
 		45673E621BCB605F0033F936 /* RFDIViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RFDIViewController.xib; sourceTree = "<group>"; };
+		45ED85C21BD6EA12009A99B4 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		45ED85C31BD6EA12009A99B4 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		45ED85C51BD6EE22009A99B4 /* myTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myTabBarButton.h; sourceTree = "<group>"; };
+		45ED85C61BD6EE22009A99B4 /* myTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myTabBarButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 		45673E141BCB5CC90033F936 = {
 			isa = PBXGroup;
 			children = (
+				451D83431BD3BE7500207CF7 /* Default-568h@2x.png */,
+				453D32001BD3C5780088271A /* Default@2x.png */,
 				45673E5E1BCB5E2B0033F936 /* libAudioJack.a */,
 				45673E5C1BCB5E170033F936 /* AudioToolbox.framework */,
 				45673E1F1BCB5CC90033F936 /* BingGu */,
@@ -100,9 +105,6 @@
 			children = (
 				45673E381BCB5D1E0033F936 /* AppDelegate.h */,
 				45673E391BCB5D1E0033F936 /* AppDelegate.m */,
-				45673E3A1BCB5D1E0033F936 /* RFDIReaderViewController.h */,
-				45673E3B1BCB5D1E0033F936 /* RFDIReaderViewController.mm */,
-				45673E3C1BCB5D1E0033F936 /* RFDIReaderViewController.xib */,
 				45673E601BCB605F0033F936 /* RFDIViewController.h */,
 				45673E611BCB605F0033F936 /* RFDIViewController.m */,
 				45673E621BCB605F0033F936 /* RFDIViewController.xib */,
@@ -116,9 +118,12 @@
 				45673E441BCB5D1E0033F936 /* AJDHex.m */,
 				45673E451BCB5D1E0033F936 /* HMAudioTool.h */,
 				45673E461BCB5D1E0033F936 /* HMAudioTool.m */,
+				45ED85C21BD6EA12009A99B4 /* MainTabBarController.h */,
+				45ED85C31BD6EA12009A99B4 /* MainTabBarController.m */,
+				45ED85C51BD6EE22009A99B4 /* myTabBarButton.h */,
+				45ED85C61BD6EE22009A99B4 /* myTabBarButton.m */,
 				45673E471BCB5D1E0033F936 /* dummy.mm */,
 				45673E2C1BCB5CC90033F936 /* Assets.xcassets */,
-				45673E2E1BCB5CC90033F936 /* LaunchScreen.storyboard */,
 				45673E311BCB5CC90033F936 /* Info.plist */,
 				45673E201BCB5CC90033F936 /* Supporting Files */,
 				45673E371BCB5D1E0033F936 /* BingGu-Bridging-Header.h */,
@@ -196,13 +201,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				453D32011BD3C5780088271A /* Default@2x.png in Resources */,
 				45673E571BCB5D3F0033F936 /* 001.wav in Resources */,
-				45673E4A1BCB5D1E0033F936 /* RFDIReaderViewController.xib in Resources */,
 				45673E4E1BCB5D1E0033F936 /* CheckTicketViewController.xib in Resources */,
 				45673E641BCB605F0033F936 /* RFDIViewController.xib in Resources */,
-				45673E301BCB5CC90033F936 /* LaunchScreen.storyboard in Resources */,
 				45673E5B1BCB5DC60033F936 /* AudioJack in Resources */,
 				45673E2D1BCB5CC90033F936 /* Assets.xcassets in Resources */,
+				451D83441BD3BE7500207CF7 /* Default-568h@2x.png in Resources */,
 				45673E4C1BCB5D1E0033F936 /* QRCodeReaderViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,29 +222,19 @@
 				45673E4D1BCB5D1E0033F936 /* CheckTicketViewController.swift in Sources */,
 				45673E481BCB5D1E0033F936 /* AppDelegate.m in Sources */,
 				45673E4F1BCB5D1E0033F936 /* MainColor.swift in Sources */,
-				45673E491BCB5D1E0033F936 /* RFDIReaderViewController.mm in Sources */,
 				45673E521BCB5D1E0033F936 /* dummy.mm in Sources */,
 				45673E221BCB5CC90033F936 /* main.m in Sources */,
+				45ED85C41BD6EA12009A99B4 /* MainTabBarController.m in Sources */,
 				45673E511BCB5D1E0033F936 /* HMAudioTool.m in Sources */,
 				45673E631BCB605F0033F936 /* RFDIViewController.m in Sources */,
 				45673E551BCB5D390033F936 /* MBProgressHUD.m in Sources */,
+				45ED85C71BD6EE22009A99B4 /* myTabBarButton.m in Sources */,
 				45673E4B1BCB5D1E0033F936 /* QRCodeReaderViewController.m in Sources */,
 				45673E501BCB5D1E0033F936 /* AJDHex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		45673E2E1BCB5CC90033F936 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				45673E2F1BCB5CC90033F936 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		45673E321BCB5CC90033F936 /* Debug */ = {
@@ -327,10 +322,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Le Lu (SXY7J8MS3P)";
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/BingGu";
 				INFOPLIST_FILE = BingGu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -348,10 +344,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Le Lu (99ZNA7BG5M)";
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/BingGu";
 				INFOPLIST_FILE = BingGu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
