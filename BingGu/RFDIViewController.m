@@ -10,6 +10,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "AJDHex.h"
+#import "CardQueryHelper.h"
 
 #define TTT 100  //waiting length
 
@@ -33,11 +34,11 @@
     BOOL _isRunning;
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    NSLog(@"touch");
-
-}
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+//{
+//    NSLog(@"touch");
+//
+//}
 
 #pragma mark toolBox
 
@@ -127,11 +128,11 @@
 //        // faild case
 //        NSLog(@"power on error");
 //    }
-//    while (progress < 1.0f) {
-//        progress += 0.01f;
-//        HUD.progress = progress;
-//        usleep(300*TTT);
-//    }
+    while (progress < 1.0f) {
+        progress += 0.01f;
+        HUD.progress = progress;
+        usleep(300*TTT);
+    }
     
     
     self.view.userInteractionEnabled = true;
@@ -169,13 +170,19 @@
                     }
                     
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        self.labelTest.text = _outPut;
+                        [self didGetCardID:_outPut];
                     });
                 }
             }
         }
     });
 }
+
+-(void)didGetCardID:(NSString*)cardID
+{
+    self.labelTest.text = cardID;
+}
+
 
 
 #pragma mark viewDidLoad
@@ -240,205 +247,6 @@
     _isReseted = YES;
 }
 
-
-
-//@section sleepmode Controlling the sleep mode
-//
-//You can enable the sleep mode by calling ACRAudioJackReader::sleep method. If
-//your delegate object implements
-//ACRAudioJackReaderDelegate::reader:didNotifyResult: method, it will receive a
-//notification after the operation is completed.
-
-
-
-// Enable the sleep mode.
-//[_reader sleep];
-
-
-
-#pragma mark - Audio Jack Reader
-
-
-//- (void)reader:(ACRAudioJackReader *)reader didNotifyResult:(ACRResult *)result {
-//    
-//    // TODO: Add code here to process the notification.
-//
-//}
-
-
-
-//@section sleeptimeout Setting the sleep timeout
-//
-//You can set the sleep timeout by calling ACRAudioJackReader::setSleepTimeout
-//method. If your delegate object implements
-//ACRAudioJackReaderDelegate::reader:didNotifyResult: method, it will receive a
-//notification after the operation is completed.
-
-
-
-// Set the sleep timeout to 10 seconds.
-//[_reader setSleepTimeout:10];
-
-
-
-#pragma mark - Audio Jack Reader
-
-
-
-//- (void)reader:(ACRAudioJackReader *)reader didNotifyResult:(ACRResult *)result {
-//    
-//    // TODO: Add code here to process the notification.
-//    
-//}
-
-
-
-
-
-
-//@section status Getting the status
-//
-//To get the status, your application should call ACRAudioJackReader::getStatus
-//method. Your delegate object should implement
-//ACRAudioJackReaderDelegate::reader:didSendStatus: method in order to receive the
-//status.
-
-
-
-
-// Get the status.
-//[_reader getStatus];
-
-
-//
-//#pragma mark - Audio Jack Reader
-//
-//
-//- (void)reader:(ACRAudioJackReader *)reader didSendStatus:(ACRStatus *)status {
-//    
-//    // TODO: Add code here to process the status.
-//    
-//}
-
-
-
-
-//@section track Receiving the track data
-//
-//When you swipe a card, the reader notifies a track data and sends it through an
-//audio channel to your iOS device. To receive the notification and the track
-//data, your delegate object should implement
-//ACRAudioJackReaderDelegate::readerDidNotifyTrackData: and
-//ACRAudioJackReaderDelegate::reader:didSendTrackData: method. You can check the
-//track error using ACRTrackData::track1ErrorCode and
-//ACRTrackData::track2ErrorCode properties. Note that the received ACRTrackData
-//object will be the instance of ACRAesTrackData or ACRDukptTrackData according to
-//the settings. You must check the type of instance before accessing the object.
-//
-//You can get the track data using ACRAesTrackData::trackData,
-//ACRDukptTrackData::track1Data and ACRDukptTrackData::track2Data properties. Note
-//that the track data of ACRAesTrackData object is encrypted by AES while the
-//track data of ACRDukptTrackData object is encrypted by Triple DES. You must
-//decrypt it before accessing the original track data.
-//
-//After decrypting the track data of ACRAesTrackData object, you can use
-//ACRTrack1Data::initWithBytes:length: and ACRTrack2Data::initWithBytes:length:
-//methods to decode the track data into fields. For the track data or masked track
-//data of ACRDukptTrackData object, you can use ACRTrack1Data::initWithString: and
-//ACRTrack2Data::initWithString: methods.
-
-
-//#pragma mark - Audio Jack Reader
-//
-//
-//- (void)readerDidNotifyTrackData:(ACRAudioJackReader *)reader {
-//    
-//    // TODO: Add your code here to process the notification.
-//    
-//}
-//
-//
-//- (void)reader:(ACRAudioJackReader *)reader
-//didSendTrackData:(ACRTrackData *)trackData {
-//    
-//    // TODO: Add code here to process the track data.
-//    if ((trackData.track1ErrorCode != ACRTrackErrorSuccess) ||
-//        (trackData.track2ErrorCode != ACRTrackErrorSuccess)) {
-//        
-//        // Show the track error.
-//        
-//        
-//        return;
-//    }
-//    
-//    if ([trackData isKindOfClass:[ACRAesTrackData class]]) {
-//        
-//        ACRAesTrackData *aesTrackData = (ACRAesTrackData *) trackData;
-//        
-////        ...
-//        
-//    } else if ([trackData isKindOfClass:[ACRDukptTrackData class]]) {
-//        
-//        ACRDukptTrackData *dukptTrackData = (ACRDukptTrackData *) trackData;
-//        
-////        ...
-//    }
-//    
-////    ...
-//}
-
-
-
-//@section raw Receiving the raw data
-//
-//If you want to access a raw data of a response, your delegate object should
-//implement ACRAudioJackReaderDelegate::reader:didSendRawData:length: method. Note
-//that the raw data is not verified by CRC16 checksum and you can call
-//ACRAudioJackReader::verifyData:length: method to verify it.
-
-
-
-#pragma mark - Audio Jack Reader
-
-//- (void)reader:(ACRAudioJackReader *)reader
-//didSendRawData:(const uint8_t *)rawData length:(NSUInteger)length {
-//    
-//    // TODO: Add code here to process the raw data.
-//    NSLog(@"didSendRowData");
-//}
-
-
-
-
-
-
-
-
-
-//@section picc Working with the PICC
-//
-//If your reader came with the PICC interface, you can operate the card using the
-//following methods:
-//
-//- ACRAudioJackReader::piccPowerOnWithTimeout:cardType:
-//- ACRAudioJackReader::piccTransmitWithTimeout:commandApdu:length:
-//- ACRAudioJackReader::piccPowerOff
-//
-//Before transmitting the APDU, you need to power on the card using
-//ACRAudioJackReader::piccPowerOnWithTimeout:cardType: method. If your delegate
-//object implements ACRAudioJackReaderDelegate::reader:didSendPiccAtr:length
-//method, it will receive the ATR string from the card.
-//
-//To transmit the APDU, you can use
-//ACRAudioJackReader::piccTransmitWithTimeout:commandApdu:length: method. If your
-//delegate object implements
-//ACRAudioJackReaderDelegate::reader:didSendPiccResponseApdu:length method, it
-//will receive the response APDU from the card.
-//
-//After using the card, you can pwoer off the card using
-//ACRAudioJackReader::piccPowerOff method. If your delegate object implements
-//ACRAudioJackReaderDelegate::reader:didNotifyResult: method, it will receive a
-//notification after the operation is completed.
 
 
 

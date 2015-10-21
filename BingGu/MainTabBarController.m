@@ -36,6 +36,8 @@
     
     [self addBarItems];
     [self addSubControllers];
+    
+    self.selectedIndex = 2;
 }
 
 - (void)addBarItems
@@ -56,6 +58,12 @@
         [self.myTabBar addSubview:aButton];
         
         [aButton addTarget:self action:@selector(changeView:) forControlEvents:UIControlEventTouchUpInside];
+        
+        //select the middle one as default
+        if (i == 2) {
+            aButton.selected = YES;
+            aButton.backgroundColor = [UIColor colorWithRed:117.0/255.0 green:117.0/255.0  blue:117.0/255.0  alpha:1.0];
+        }
         
     }
     

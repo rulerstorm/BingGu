@@ -29,6 +29,14 @@
 		45673E641BCB605F0033F936 /* RFDIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45673E621BCB605F0033F936 /* RFDIViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		45ED85C41BD6EA12009A99B4 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED85C31BD6EA12009A99B4 /* MainTabBarController.m */; settings = {ASSET_TAGS = (); }; };
 		45ED85C71BD6EE22009A99B4 /* myTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED85C61BD6EE22009A99B4 /* myTabBarButton.m */; settings = {ASSET_TAGS = (); }; };
+		45ED85CE1BD72A41009A99B4 /* CardQueryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED85CD1BD72A41009A99B4 /* CardQueryHelper.m */; settings = {ASSET_TAGS = (); }; };
+		45ED85D51BD73594009A99B4 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED85D41BD73594009A99B4 /* AFHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
+		45ED85D81BD735F1009A99B4 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED85D71BD735F1009A99B4 /* AFHTTPRequestOperation.m */; settings = {ASSET_TAGS = (); }; };
+		45ED85DB1BD73603009A99B4 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED85DA1BD73603009A99B4 /* AFURLConnectionOperation.m */; settings = {ASSET_TAGS = (); }; };
+		45ED85E01BD73619009A99B4 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED85DD1BD73619009A99B4 /* AFURLRequestSerialization.m */; settings = {ASSET_TAGS = (); }; };
+		45ED85E11BD73619009A99B4 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED85DF1BD73619009A99B4 /* AFURLResponseSerialization.m */; settings = {ASSET_TAGS = (); }; };
+		45ED85E41BD73628009A99B4 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED85E31BD73628009A99B4 /* AFSecurityPolicy.m */; settings = {ASSET_TAGS = (); }; };
+		45ED85E71BD7363D009A99B4 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED85E61BD7363D009A99B4 /* AFNetworkReachabilityManager.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +73,22 @@
 		45ED85C31BD6EA12009A99B4 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		45ED85C51BD6EE22009A99B4 /* myTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myTabBarButton.h; sourceTree = "<group>"; };
 		45ED85C61BD6EE22009A99B4 /* myTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myTabBarButton.m; sourceTree = "<group>"; };
+		45ED85CC1BD72A41009A99B4 /* CardQueryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardQueryHelper.h; sourceTree = "<group>"; };
+		45ED85CD1BD72A41009A99B4 /* CardQueryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardQueryHelper.m; sourceTree = "<group>"; };
+		45ED85D31BD73594009A99B4 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		45ED85D41BD73594009A99B4 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		45ED85D61BD735F1009A99B4 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		45ED85D71BD735F1009A99B4 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		45ED85D91BD73603009A99B4 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		45ED85DA1BD73603009A99B4 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		45ED85DC1BD73619009A99B4 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		45ED85DD1BD73619009A99B4 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		45ED85DE1BD73619009A99B4 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		45ED85DF1BD73619009A99B4 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		45ED85E21BD73628009A99B4 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		45ED85E31BD73628009A99B4 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		45ED85E51BD7363D009A99B4 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		45ED85E61BD7363D009A99B4 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +147,10 @@
 				45ED85C51BD6EE22009A99B4 /* myTabBarButton.h */,
 				45ED85C61BD6EE22009A99B4 /* myTabBarButton.m */,
 				45673E471BCB5D1E0033F936 /* dummy.mm */,
+				45ED85E81BD7366B009A99B4 /* AFNetworking */,
 				45673E2C1BCB5CC90033F936 /* Assets.xcassets */,
+				45ED85CC1BD72A41009A99B4 /* CardQueryHelper.h */,
+				45ED85CD1BD72A41009A99B4 /* CardQueryHelper.m */,
 				45673E311BCB5CC90033F936 /* Info.plist */,
 				45673E201BCB5CC90033F936 /* Supporting Files */,
 				45673E371BCB5D1E0033F936 /* BingGu-Bridging-Header.h */,
@@ -141,6 +168,27 @@
 				45673E211BCB5CC90033F936 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45ED85E81BD7366B009A99B4 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				45ED85E21BD73628009A99B4 /* AFSecurityPolicy.h */,
+				45ED85E31BD73628009A99B4 /* AFSecurityPolicy.m */,
+				45ED85E51BD7363D009A99B4 /* AFNetworkReachabilityManager.h */,
+				45ED85E61BD7363D009A99B4 /* AFNetworkReachabilityManager.m */,
+				45ED85D61BD735F1009A99B4 /* AFHTTPRequestOperation.h */,
+				45ED85D71BD735F1009A99B4 /* AFHTTPRequestOperation.m */,
+				45ED85D31BD73594009A99B4 /* AFHTTPRequestOperationManager.h */,
+				45ED85D41BD73594009A99B4 /* AFHTTPRequestOperationManager.m */,
+				45ED85D91BD73603009A99B4 /* AFURLConnectionOperation.h */,
+				45ED85DA1BD73603009A99B4 /* AFURLConnectionOperation.m */,
+				45ED85DC1BD73619009A99B4 /* AFURLRequestSerialization.h */,
+				45ED85DD1BD73619009A99B4 /* AFURLRequestSerialization.m */,
+				45ED85DE1BD73619009A99B4 /* AFURLResponseSerialization.h */,
+				45ED85DF1BD73619009A99B4 /* AFURLResponseSerialization.m */,
+			);
+			name = AFNetworking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,16 +267,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45ED85DB1BD73603009A99B4 /* AFURLConnectionOperation.m in Sources */,
 				45673E4D1BCB5D1E0033F936 /* CheckTicketViewController.swift in Sources */,
+				45ED85E71BD7363D009A99B4 /* AFNetworkReachabilityManager.m in Sources */,
 				45673E481BCB5D1E0033F936 /* AppDelegate.m in Sources */,
 				45673E4F1BCB5D1E0033F936 /* MainColor.swift in Sources */,
 				45673E521BCB5D1E0033F936 /* dummy.mm in Sources */,
+				45ED85D51BD73594009A99B4 /* AFHTTPRequestOperationManager.m in Sources */,
+				45ED85CE1BD72A41009A99B4 /* CardQueryHelper.m in Sources */,
 				45673E221BCB5CC90033F936 /* main.m in Sources */,
+				45ED85E41BD73628009A99B4 /* AFSecurityPolicy.m in Sources */,
 				45ED85C41BD6EA12009A99B4 /* MainTabBarController.m in Sources */,
 				45673E511BCB5D1E0033F936 /* HMAudioTool.m in Sources */,
+				45ED85E11BD73619009A99B4 /* AFURLResponseSerialization.m in Sources */,
 				45673E631BCB605F0033F936 /* RFDIViewController.m in Sources */,
 				45673E551BCB5D390033F936 /* MBProgressHUD.m in Sources */,
+				45ED85E01BD73619009A99B4 /* AFURLRequestSerialization.m in Sources */,
 				45ED85C71BD6EE22009A99B4 /* myTabBarButton.m in Sources */,
+				45ED85D81BD735F1009A99B4 /* AFHTTPRequestOperation.m in Sources */,
 				45673E4B1BCB5D1E0033F936 /* QRCodeReaderViewController.m in Sources */,
 				45673E501BCB5D1E0033F936 /* AJDHex.m in Sources */,
 			);
@@ -324,7 +380,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Le Lu (SXY7J8MS3P)";
 				ENABLE_BITCODE = NO;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/BingGu";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/BingGu",
+					"$(PROJECT_DIR)/AFNetworking",
+				);
 				INFOPLIST_FILE = BingGu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -332,10 +391,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/BingGu/AudioJack",
 				);
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = me.rocklule.BingGu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BingGu/BingGu-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -346,7 +409,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Le Lu (99ZNA7BG5M)";
 				ENABLE_BITCODE = NO;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/BingGu";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/BingGu",
+					"$(PROJECT_DIR)/AFNetworking",
+				);
 				INFOPLIST_FILE = BingGu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -354,9 +420,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/BingGu/AudioJack",
 				);
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = me.rocklule.BingGu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BingGu/BingGu-Bridging-Header.h";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
