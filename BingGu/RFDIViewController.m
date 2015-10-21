@@ -192,9 +192,11 @@
     self.labelTest.text = cardID;
     NSString* trueID = [cardID substringToIndex:20];
 //    NSLog(@"%@-----------", trueID);
-    NSInteger enterCount = [CardQueryHelper getJSON:trueID];
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        
+        NSInteger enterCount = [CardQueryHelper getJSON:trueID];
+        
         HUD.mode = MBProgressHUDModeIndeterminate;
         if (-1 == enterCount) {
             HUD.labelText = @"检票失败";
@@ -207,7 +209,7 @@
             
         }];
     });
-    sleep(2);
+    sleep(3);
 }
 
 
