@@ -19,8 +19,22 @@
 
 //- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 //{
-//    NSLog(@"sdf");
+//
 //    [HMAudioTool playAudioWithFilename:@"001.wav"];
+//    
+//        
+//        NSString *urlStr = @"http://120.27.54.111:8080/index.php?id=04A60D3A8E3680";
+//        
+//        NSURL* url = [NSURL URLWithString:urlStr];
+//        
+//        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//        
+//        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+//        
+//        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+//        NSLog(@"%@",dict);
+//
+//    
 //}
 
 

@@ -30,6 +30,7 @@
     BOOL _isTransmitReturned;
     BOOL _resultNotified;
     NSString * _outPut;
+    int _specialCount;
     
     BOOL _isRunning;
 }
@@ -157,7 +158,15 @@
                 while (!_isPowerOned) {
                     NSLog(@"waiting for _isPowerOned....");
                     usleep(200000);   //0.2s
+                    _specialCount++;
+                    if (_specialCount > 10) {
+                        _specialCount = 0;
+                        if (![self powerOn]) {
+                            NSLog(@"powerOn error");
+                        }
+                    }
                 }
+                _specialCount = 0;
                 
                 if (![self transmit]) {
                     NSLog(@"transmit error");
@@ -169,9 +178,9 @@
                         usleep(200000);   //0.2s
                     }
                     
-                    dispatch_async(dispatch_get_main_queue(), ^{
+//                    dispatch_async(dispatch_get_main_queue(), ^{
                         [self didGetCardID:_outPut];
-                    });
+//                    });
                 }
             }
         }
@@ -181,6 +190,24 @@
 -(void)didGetCardID:(NSString*)cardID
 {
     self.labelTest.text = cardID;
+    NSString* trueID = [cardID substringToIndex:20];
+//    NSLog(@"%@-----------", trueID);
+    NSInteger enterCount = [CardQueryHelper getJSON:trueID];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        HUD.mode = MBProgressHUDModeIndeterminate;
+        if (-1 == enterCount) {
+            HUD.labelText = @"检票失败";
+        }else{
+            HUD.labelText = [NSString stringWithFormat:@"检票成功，入场次数：%ld",(long)enterCount ] ;
+        }
+        [HUD showAnimated:YES whileExecutingBlock:^{
+            sleep(2);
+        } completionBlock:^{
+            
+        }];
+    });
+    sleep(2);
 }
 
 

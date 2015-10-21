@@ -10,5 +10,5 @@
 
 
 @interface CardQueryHelper : NSObject
-
++ (NSInteger)getJSON:(NSString*)cardID;
 @end
