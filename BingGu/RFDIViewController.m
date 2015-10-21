@@ -189,11 +189,13 @@
 
 -(void)didGetCardID:(NSString*)cardID
 {
-    self.labelTest.text = cardID;
+
     NSString* trueID = [cardID substringToIndex:20];
 //    NSLog(@"%@-----------", trueID);
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        
+        self.labelTest.text = cardID;
         
         NSInteger enterCount = [CardQueryHelper getJSON:trueID];
         
