@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4507C82F1BD8B27E00EA2790 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4507C82E1BD8B27E00EA2790 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		451D83441BD3BE7500207CF7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451D83431BD3BE7500207CF7 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
 		453D32011BD3C5780088271A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 453D32001BD3C5780088271A /* Default@2x.png */; settings = {ASSET_TAGS = (); }; };
 		45673E221BCB5CC90033F936 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45673E211BCB5CC90033F936 /* main.m */; };
@@ -33,12 +34,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4507C82E1BD8B27E00EA2790 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		451D83431BD3BE7500207CF7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		453D32001BD3C5780088271A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		45673E1D1BCB5CC90033F936 /* BingGu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BingGu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45673E211BCB5CC90033F936 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		45673E2C1BCB5CC90033F936 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		45673E311BCB5CC90033F936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45673E371BCB5D1E0033F936 /* BingGu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BingGu-Bridging-Header.h"; sourceTree = "<group>"; };
 		45673E381BCB5D1E0033F936 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		45673E391BCB5D1E0033F936 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -129,7 +130,7 @@
 				45673E2C1BCB5CC90033F936 /* Assets.xcassets */,
 				45ED85CC1BD72A41009A99B4 /* CardQueryHelper.h */,
 				45ED85CD1BD72A41009A99B4 /* CardQueryHelper.m */,
-				45673E311BCB5CC90033F936 /* Info.plist */,
+				4507C82E1BD8B27E00EA2790 /* Info.plist */,
 				45673E201BCB5CC90033F936 /* Supporting Files */,
 				45673E371BCB5D1E0033F936 /* BingGu-Bridging-Header.h */,
 			);
@@ -208,6 +209,7 @@
 			files = (
 				453D32011BD3C5780088271A /* Default@2x.png in Resources */,
 				45673E571BCB5D3F0033F936 /* 001.wav in Resources */,
+				4507C82F1BD8B27E00EA2790 /* Info.plist in Resources */,
 				45673E4E1BCB5D1E0033F936 /* CheckTicketViewController.xib in Resources */,
 				45673E641BCB605F0033F936 /* RFDIViewController.xib in Resources */,
 				45673E5B1BCB5DC60033F936 /* AudioJack in Resources */,
@@ -335,17 +337,18 @@
 					"$(PROJECT_DIR)/AFNetworking",
 				);
 				INFOPLIST_FILE = BingGu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BingGu/AudioJack",
 				);
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = me.rocklule.BingGu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BingGu/BingGu-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -364,7 +367,7 @@
 					"$(PROJECT_DIR)/AFNetworking",
 				);
 				INFOPLIST_FILE = BingGu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -375,6 +378,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = me.rocklule.BingGu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BingGu/BingGu-Bridging-Header.h";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
