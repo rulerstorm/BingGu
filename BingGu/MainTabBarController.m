@@ -7,7 +7,7 @@
 //
 
 #import "MainTabBarController.h"
-#import "BingGu-Swift.h"
+#import "CheckTicketViewController.h"
 
 @interface MainTabBarController ()
 

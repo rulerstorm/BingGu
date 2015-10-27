@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckTicketViewController" customModule="BingGu" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckTicketViewController">
             <connections>
-                <outlet property="ViewBar" destination="40z-oz-rAr" id="qd6-30-Pdi"/>
-                <outlet property="buttonQRCode" destination="1ku-ft-f8y" id="bur-id-A3j"/>
-                <outlet property="buttonRFDI" destination="YUh-Zk-kJF" id="Sk2-DZ-Nhi"/>
+                <outlet property="buttonQRCode" destination="8Ge-Gr-ULk" id="V6G-wy-EIj"/>
+                <outlet property="buttonRFDI" destination="IN6-zr-HW1" id="tI1-ZF-WGO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="viewCenterWhite" destination="eol-HW-hlB" id="8MD-QU-SIh"/>
+                <outlet property="viewBar" destination="U3z-rg-sfT" id="CrR-XI-tiO"/>
+                <outlet property="viewContent" destination="SAf-xq-Kvn" id="KbM-lQ-wlc"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,58 +19,59 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eol-HW-hlB">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SAf-xq-Kvn">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <animations/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <view alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BQZ-f3-kz5">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                     <subviews>
-                        <view alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="40z-oz-rAr">
-                            <rect key="frame" x="90" y="26" width="140" height="30"/>
+                        <view alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x3L-O1-jY5">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUh-Zk-kJF">
-                                    <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
+                                <view alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U3z-rg-sfT">
+                                    <rect key="frame" x="90" y="26" width="140" height="30"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IN6-zr-HW1">
+                                            <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <state key="normal" title="RFDI">
+                                                <color key="titleColor" red="0.45098039220000002" green="0.74117647060000003" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <state key="selected">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="buttonRFDIClicked:" destination="-1" eventType="touchUpInside" id="J8x-CK-nfr"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ge-Gr-ULk">
+                                            <rect key="frame" x="70" y="0.0" width="70" height="30"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <state key="normal" title="二维码">
+                                                <color key="titleColor" red="0.45098039220000002" green="0.74117647060000003" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <state key="selected">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="buttonQRCodeClicked:" destination="-1" eventType="touchUpInside" id="zaQ-bT-Yj8"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
                                     <animations/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" title="RFDI">
-                                        <color key="titleColor" red="0.45098039220000002" green="0.74117647060000003" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <state key="selected">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="buttonRFDIClicked" destination="-1" eventType="touchUpInside" id="l4B-dL-Msd"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ku-ft-f8y">
-                                    <rect key="frame" x="70" y="0.0" width="70" height="30"/>
-                                    <animations/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" title="二维码">
-                                        <color key="titleColor" red="0.45098039220000002" green="0.74117647060000003" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <state key="selected">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="buttonQRCodeClicked" destination="-1" eventType="touchUpInside" id="cAd-LI-p92"/>
-                                    </connections>
-                                </button>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
                             </subviews>
                             <animations/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.45098039220000002" green="0.74117647060000003" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                     </subviews>
                     <animations/>
-                    <color key="backgroundColor" red="0.45098039220000002" green="0.74117647060000003" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-            <point key="canvasLocation" x="270" y="357"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
 </document>
