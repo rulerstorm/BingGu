@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "AudioJack/AudioJack.h"
 #import "MBProgressHUD.h"
+#import "OutputOfCheckTicketView.h"
 
-@interface RFDIViewController : UIViewController <MBProgressHUDDelegate,ACRAudioJackReaderDelegate>
+
+@interface RFDIViewController : UIViewController <MBProgressHUDDelegate,ACRAudioJackReaderDelegate, OutputOfCheckTicketViewDelegate>
 
 @end 

@@ -12,6 +12,7 @@
 #import "AJDHex.h"
 #import "CardQueryHelper.h"
 
+
 #define TTT 100  //waiting length
 
 
@@ -19,6 +20,7 @@
         MBProgressHUD *HUD;
 }
 @property (weak, nonatomic) IBOutlet UIView *viewPictureCenter;
+@property (strong, nonatomic) OutputOfCheckTicketView* outputView;
 
 @end
 
@@ -199,17 +201,24 @@
         
         NSInteger enterCount = [CardQueryHelper getJSON:trueID];
         
-        HUD.mode = MBProgressHUDModeIndeterminate;
+//        HUD.mode = MBProgressHUDModeIndeterminate;
         if (-1 == enterCount) {
-            HUD.labelText = @"检票失败";
+            #warning fail
+//            HUD.labelText = @"检票失败";
+
         }else{
-            HUD.labelText = [NSString stringWithFormat:@"检票成功，入场次数：%ld",(long)enterCount ] ;
-        }
-        [HUD showAnimated:YES whileExecutingBlock:^{
-            sleep(2);
-        } completionBlock:^{
+            #warning success
+//            HUD.labelText = [NSString stringWithFormat:@"检票成功，入场次数：%ld",(long)enterCount ] ;
             
-        }];
+        }
+//        [HUD showAnimated:YES whileExecutingBlock:^{
+//            sleep(2);
+//        } completionBlock:^{
+//            
+//        }];
+        
+        
+        
     });
     sleep(3);
 }
@@ -236,6 +245,14 @@
     self.viewPictureCenter.layer.borderColor = [[UIColor colorWithRed:200.0/255.0 green:200.0/255.0  blue:200.0/255.0  alpha:0.5] CGColor];
     self.viewPictureCenter.layer.borderWidth = 3;
     self.viewPictureCenter.layer.cornerRadius = 10;
+    
+    
+    UINib* nib = [UINib nibWithNibName:@"OutputOfCheckTicketView" bundle:nil];
+    self.outputView = [nib instantiateWithOwner:nil options:nil][0];
+    self.outputView.alpha = 0;
+    self.outputView.delegate = self;
+    [self.view addSubview:self.outputView];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -353,6 +370,12 @@ length:(NSUInteger)length {
     [self powerOn];
 }
 
+#warning 还没写
+#pragma OutputOfCheckTickerViewDelegation
+- (void)confirmNotified
+{
+    
+}
 
 
 @end

@@ -9,10 +9,13 @@
 #import "QRCodeReaderViewController.h"
 #import "HMAudioTool.h"
 
+
+
 @interface QRCodeReaderViewController ()
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
 //@property (weak, nonatomic) IBOutlet UILabel *mainLabel;
 @property (weak, nonatomic) IBOutlet UIButton *imageViewLine;
+@property (strong, nonatomic) OutputOfCheckTicketView* outputView;
 
 @property(nonatomic,retain)NSTimer *timer;
 
@@ -76,6 +79,15 @@
     
     [self startRunning];
 //    [self moveLine];
+    
+    
+    
+    UINib* nib = [UINib nibWithNibName:@"OutputOfCheckTicketView" bundle:nil];
+    self.outputView = [nib instantiateWithOwner:nil options:nil][0];
+    self.outputView.alpha = 0;
+    self.outputView.delegate = self;
+    [self.view addSubview:self.outputView];
+    
 }
 
 - (void)dealloc {
@@ -90,11 +102,11 @@
 
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-//    [self stopRunning];
-//    NSLog(@"sdddddfs");
-}
+//- (void)viewWillDisappear:(BOOL)animated
+//{
+////    [self stopRunning];
+////    NSLog(@"sdddddfs");
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -184,11 +196,14 @@
                  dispatch_async(dispatch_get_main_queue(), ^{
                      [self stopRunning];
                      [self doSomething:code.stringValue];             //UI stuff
-                     [self startRunning];
+//                     [self startRunning];
                  });
+//              sleep(2);
              }
          }];
      }];
+    
+
 }
 
 
@@ -198,12 +213,20 @@
 {
 //    _mainLabel.text = code;
     [HMAudioTool playAudioWithFilename:@"001.wav"];
+    [self.outputView setAsSuccess:@"5"];
 }
 
 - (IBAction)switchFlashClicked:(UISwitch *)sender {
     
     
     
+}
+
+
+#pragma OutputOfCheckTickerViewDelegation
+- (void)confirmNotified
+{
+    [self startRunning];
 }
 
 

@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "OutputOfCheckTicketView.h"
 
 
-@interface QRCodeReaderViewController : UIViewController<AVCaptureMetadataOutputObjectsDelegate>
+@interface QRCodeReaderViewController : UIViewController<AVCaptureMetadataOutputObjectsDelegate, OutputOfCheckTicketViewDelegate>
+
 @property (strong, nonatomic) AVCaptureSession *captureSession;
 @property (strong, nonatomic) AVCaptureDevice *videoDevice;
 @property (strong, nonatomic) AVCaptureDeviceInput *videoInput;

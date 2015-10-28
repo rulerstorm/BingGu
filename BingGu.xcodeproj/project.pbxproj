@@ -12,6 +12,8 @@
 		45075AC31BE0B7130041D856 /* StatisticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45075AC11BE0B7130041D856 /* StatisticViewController.m */; };
 		45075AC41BE0B7130041D856 /* StatisticViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45075AC21BE0B7130041D856 /* StatisticViewController.xib */; };
 		451D83441BD3BE7500207CF7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451D83431BD3BE7500207CF7 /* Default-568h@2x.png */; };
+		4526C8E81BE0F84900A3BC17 /* OutputOfCheckTicketView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4526C8E71BE0F84900A3BC17 /* OutputOfCheckTicketView.m */; };
+		4526C8EA1BE0F86800A3BC17 /* OutputOfCheckTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4526C8E91BE0F86800A3BC17 /* OutputOfCheckTicketView.xib */; };
 		453D32011BD3C5780088271A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 453D32001BD3C5780088271A /* Default@2x.png */; };
 		45673E221BCB5CC90033F936 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45673E211BCB5CC90033F936 /* main.m */; };
 		45673E2D1BCB5CC90033F936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45673E2C1BCB5CC90033F936 /* Assets.xcassets */; };
@@ -51,6 +53,9 @@
 		45075AC21BE0B7130041D856 /* StatisticViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatisticViewController.xib; sourceTree = "<group>"; };
 		4507C82E1BD8B27E00EA2790 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		451D83431BD3BE7500207CF7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4526C8E61BE0F84900A3BC17 /* OutputOfCheckTicketView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputOfCheckTicketView.h; sourceTree = "<group>"; };
+		4526C8E71BE0F84900A3BC17 /* OutputOfCheckTicketView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputOfCheckTicketView.m; sourceTree = "<group>"; };
+		4526C8E91BE0F86800A3BC17 /* OutputOfCheckTicketView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OutputOfCheckTicketView.xib; sourceTree = "<group>"; };
 		453D32001BD3C5780088271A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		45673E1D1BCB5CC90033F936 /* BingGu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BingGu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45673E211BCB5CC90033F936 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -160,6 +165,9 @@
 				45673E3F1BCB5D1E0033F936 /* QRCodeReaderViewController.xib */,
 				45E2258A1BDFB97C005C5D0C /* CheckTicketViewController.xib */,
 				45075ABD1BE0B26E0041D856 /* RefoundViewController.xib */,
+				4526C8E61BE0F84900A3BC17 /* OutputOfCheckTicketView.h */,
+				4526C8E71BE0F84900A3BC17 /* OutputOfCheckTicketView.m */,
+				4526C8E91BE0F86800A3BC17 /* OutputOfCheckTicketView.xib */,
 				458197551BE09FCC0064E104 /* ChangeTicketViewController.xib */,
 				45869EDC1BE0AE4800360521 /* TopUpViewController.xib */,
 				45075AC21BE0B7130041D856 /* StatisticViewController.xib */,
@@ -286,6 +294,7 @@
 				45869EDE1BE0AE4800360521 /* TopUpViewController.xib in Resources */,
 				458197571BE09FCC0064E104 /* ChangeTicketViewController.xib in Resources */,
 				45673E4C1BCB5D1E0033F936 /* QRCodeReaderViewController.xib in Resources */,
+				4526C8EA1BE0F86800A3BC17 /* OutputOfCheckTicketView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +310,7 @@
 				45673E521BCB5D1E0033F936 /* dummy.mm in Sources */,
 				45ED85CE1BD72A41009A99B4 /* CardQueryHelper.m in Sources */,
 				45B063941BE0C12A00D9D909 /* DeatailedStatisticalViewController.m in Sources */,
+				4526C8E81BE0F84900A3BC17 /* OutputOfCheckTicketView.m in Sources */,
 				45075ABE1BE0B26E0041D856 /* RefoundViewController.m in Sources */,
 				45673E221BCB5CC90033F936 /* main.m in Sources */,
 				45ED85C41BD6EA12009A99B4 /* MainTabBarController.m in Sources */,
@@ -405,8 +415,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Le Lu (SXY7J8MS3P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Le Lu (SXY7J8MS3P)";
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/BingGu",
@@ -437,8 +447,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Le Lu (99ZNA7BG5M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Le Lu (99ZNA7BG5M)";
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/BingGu",

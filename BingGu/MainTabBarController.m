@@ -16,6 +16,7 @@
 
 
 
+
 @interface MainTabBarController ()
 
 @property(nonatomic,strong)UIView* myTabBar;
@@ -47,6 +48,9 @@
     [self addSubControllers];
     
     self.selectedIndex = 2;
+    
+
+    
 }
 
 - (void)addBarItems
