@@ -11,7 +11,10 @@
 
 @interface QRCodeReaderViewController ()
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
-@property (weak, nonatomic) IBOutlet UILabel *mainLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *mainLabel;
+@property (weak, nonatomic) IBOutlet UIButton *imageViewLine;
+
+@property(nonatomic,retain)NSTimer *timer;
 
 @end
 
@@ -37,6 +40,20 @@
 //    
 //}
 
+-(void)moveLine
+{
+    static BOOL flag = YES;
+    if (flag) {
+        [UIView animateWithDuration:2.0 animations:^{
+                                            self.imageViewLine.transform = CGAffineTransformMakeTranslation(0, 202);
+        }];
+    }else{
+        [UIView animateWithDuration:2.0 animations:^{
+            self.imageViewLine.transform = CGAffineTransformMakeTranslation(0, 0);
+        }];
+    }
+    flag = !flag;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,6 +69,13 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    
+
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(moveLine) userInfo:nil repeats:YES];
+    [self.timer fire];
+    
+    [self startRunning];
+//    [self moveLine];
 }
 
 - (void)dealloc {
@@ -62,11 +86,14 @@
 {
     //start scan~~~~
     [self startRunning];
+//    NSLog(@"sdfsdfs");
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [self stopRunning];
+//    [self stopRunning];
+//    NSLog(@"sdddddfs");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -133,15 +160,13 @@
 
 - (void)startRunning
 {
-    if (_isRunning)
-        return;
     [_captureSession startRunning];
     _metadataOutput.metadataObjectTypes = _metadataOutput.availableMetadataObjectTypes;
     _isRunning = YES;
 }
 
 - (void)stopRunning {
-    if (!_isRunning) return;
+
     [_captureSession stopRunning];
     _isRunning = NO;
 }
@@ -171,10 +196,15 @@
 //do what you want with the qrCode's string
 - (void)doSomething:(NSString*)code
 {
-    _mainLabel.text = code;
+//    _mainLabel.text = code;
     [HMAudioTool playAudioWithFilename:@"001.wav"];
 }
 
+- (IBAction)switchFlashClicked:(UISwitch *)sender {
+    
+    
+    
+}
 
 
 @end
