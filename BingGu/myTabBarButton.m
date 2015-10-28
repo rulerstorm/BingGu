@@ -24,11 +24,10 @@
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     [self setTitleColor: [UIColor colorWithRed:117.0/255.0 green:117.0/255.0  blue:117.0/255.0  alpha:1.0] forState:UIControlStateNormal];
     
-    NSString* imageName = [NSString stringWithFormat:@"%ld%@",_myIndex+1,myTitle];
-    NSString* selectedImageName = [NSString stringWithFormat:@"%ld%@－选中",_myIndex+1,myTitle];
+    NSString* imageName = [NSString stringWithFormat:@"%ld%@", _myIndex+1, myTitle];
+    NSString* selectedImageName = [NSString stringWithFormat:@"%ld%@－选中", _myIndex+1, myTitle];
 
-    NSLog(@"%@", selectedImageName);
-    
+//    NSLog(@"%@", selectedImageName);
     
     [self setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     [self setImage:[UIImage imageNamed:selectedImageName] forState:UIControlStateSelected];

@@ -7,8 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RFDIViewController">
             <connections>
-                <outlet property="labelTest" destination="jnn-N0-cCY" id="WBm-38-kTO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewPictureCenter" destination="iY8-HE-wwF" id="Kc1-gZ-gmI"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -16,17 +16,51 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnn-N0-cCY">
-                    <rect key="frame" x="45" y="273" width="231" height="21"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iY8-HE-wwF">
+                    <rect key="frame" x="60" y="100" width="200" height="200"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="感应" translatesAutoresizingMaskIntoConstraints="NO" id="DLS-kU-nNb">
+                            <rect key="frame" x="39" y="33" width="123" height="134"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="134" id="5Fl-qj-W75"/>
+                                <constraint firstAttribute="width" constant="123" id="F8M-rT-EpG"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
                     <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="DLS-kU-nNb" firstAttribute="centerY" secondItem="iY8-HE-wwF" secondAttribute="centerY" id="7GN-8B-40e"/>
+                        <constraint firstAttribute="width" constant="200" id="RBW-xG-QZc"/>
+                        <constraint firstAttribute="height" constant="200" id="ccA-4R-BlI"/>
+                        <constraint firstItem="DLS-kU-nNb" firstAttribute="centerX" secondItem="iY8-HE-wwF" secondAttribute="centerX" id="raa-fc-y81"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请将门票靠近手机" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfF-Ks-jWO">
+                    <rect key="frame" x="60" y="330" width="200" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="Fg5-XI-dFB"/>
+                        <constraint firstAttribute="height" constant="30" id="sA1-WY-H3r"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="iY8-HE-wwF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9Zv-Ng-0xb"/>
+                <constraint firstItem="iY8-HE-wwF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="QcA-ef-h4N"/>
+                <constraint firstItem="gfF-Ks-jWO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mUJ-SP-1ax"/>
+                <constraint firstItem="gfF-Ks-jWO" firstAttribute="top" secondItem="iY8-HE-wwF" secondAttribute="bottom" constant="30" id="zMZ-Uo-ohD"/>
+            </constraints>
             <point key="canvasLocation" x="373" y="285"/>
         </view>
     </objects>
+    <resources>
+        <image name="感应" width="123" height="133"/>
+    </resources>
 </document>

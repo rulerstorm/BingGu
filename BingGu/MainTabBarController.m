@@ -8,6 +8,13 @@
 
 #import "MainTabBarController.h"
 #import "CheckTicketViewController.h"
+#import "MyNavigationViewController.h"
+#import "ChangeTicketViewController.h"
+#import "TopUpViewController.h"
+#import "RefoundViewController.h"
+#import "StatisticViewController.h"
+
+
 
 @interface MainTabBarController ()
 
@@ -27,6 +34,8 @@
     
     //change the tabbar
     self.myTabBar = [[UIView alloc] initWithFrame:self.tabBar.frame];
+    self.myTabBar.layer.borderColor = [[UIColor colorWithRed:150.0/255.0 green:150.0/255.0  blue:150.0/255.0  alpha:0.5] CGColor];
+    self.myTabBar.layer.borderWidth = 1;
     [self.view addSubview:self.myTabBar];
     [self.tabBar removeFromSuperview];
     
@@ -73,11 +82,11 @@
 {
     self.subControllers = [[NSMutableArray alloc]init];
     
-    _subControllers[0] = [[UIViewController alloc]init];
-    _subControllers[1] = [[UIViewController alloc]init];
+    _subControllers[0] = [[MyNavigationViewController alloc] initWithRootViewController: [[TopUpViewController alloc] init]];
+    _subControllers[1] = [[MyNavigationViewController alloc] initWithRootViewController: [[RefoundViewController alloc] init]];
     _subControllers[2] = [[CheckTicketViewController alloc]init];
-    _subControllers[3] = [[UIViewController alloc]init];
-    _subControllers[4] = [[UIViewController alloc]init];
+    _subControllers[3] = [[MyNavigationViewController alloc] initWithRootViewController: [[ChangeTicketViewController alloc] init]];
+    _subControllers[4] = [[MyNavigationViewController alloc] initWithRootViewController: [[StatisticViewController alloc] init]];
     
     for (UIViewController* pages in _subControllers) {
         [self addChildViewController:pages];

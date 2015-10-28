@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45075ABE1BE0B26E0041D856 /* RefoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45075ABC1BE0B26E0041D856 /* RefoundViewController.m */; };
+		45075ABF1BE0B26E0041D856 /* RefoundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45075ABD1BE0B26E0041D856 /* RefoundViewController.xib */; };
+		45075AC31BE0B7130041D856 /* StatisticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45075AC11BE0B7130041D856 /* StatisticViewController.m */; };
+		45075AC41BE0B7130041D856 /* StatisticViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45075AC21BE0B7130041D856 /* StatisticViewController.xib */; };
 		451D83441BD3BE7500207CF7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451D83431BD3BE7500207CF7 /* Default-568h@2x.png */; };
 		453D32011BD3C5780088271A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 453D32001BD3C5780088271A /* Default@2x.png */; };
 		45673E221BCB5CC90033F936 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45673E211BCB5CC90033F936 /* main.m */; };
@@ -24,6 +28,13 @@
 		45673E5F1BCB5E2B0033F936 /* libAudioJack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45673E5E1BCB5E2B0033F936 /* libAudioJack.a */; };
 		45673E631BCB605F0033F936 /* RFDIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45673E611BCB605F0033F936 /* RFDIViewController.m */; };
 		45673E641BCB605F0033F936 /* RFDIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45673E621BCB605F0033F936 /* RFDIViewController.xib */; };
+		458197561BE09FCC0064E104 /* ChangeTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 458197541BE09FCC0064E104 /* ChangeTicketViewController.m */; };
+		458197571BE09FCC0064E104 /* ChangeTicketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458197551BE09FCC0064E104 /* ChangeTicketViewController.xib */; };
+		4581975A1BE0A3D70064E104 /* MyNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 458197591BE0A3D70064E104 /* MyNavigationViewController.m */; };
+		45869EDD1BE0AE4800360521 /* TopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45869EDB1BE0AE4800360521 /* TopUpViewController.m */; };
+		45869EDE1BE0AE4800360521 /* TopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45869EDC1BE0AE4800360521 /* TopUpViewController.xib */; };
+		45B063941BE0C12A00D9D909 /* DeatailedStatisticalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B063921BE0C12A00D9D909 /* DeatailedStatisticalViewController.m */; };
+		45B063951BE0C12A00D9D909 /* DeatailedStatisticalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45B063931BE0C12A00D9D909 /* DeatailedStatisticalViewController.xib */; };
 		45E2258B1BDFB97C005C5D0C /* CheckTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E225891BDFB97C005C5D0C /* CheckTicketViewController.m */; };
 		45E2258C1BDFB97C005C5D0C /* CheckTicketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E2258A1BDFB97C005C5D0C /* CheckTicketViewController.xib */; };
 		45ED85C41BD6EA12009A99B4 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED85C31BD6EA12009A99B4 /* MainTabBarController.m */; };
@@ -32,6 +43,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		45075ABB1BE0B26E0041D856 /* RefoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefoundViewController.h; sourceTree = "<group>"; };
+		45075ABC1BE0B26E0041D856 /* RefoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefoundViewController.m; sourceTree = "<group>"; };
+		45075ABD1BE0B26E0041D856 /* RefoundViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefoundViewController.xib; sourceTree = "<group>"; };
+		45075AC01BE0B7130041D856 /* StatisticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticViewController.h; sourceTree = "<group>"; };
+		45075AC11BE0B7130041D856 /* StatisticViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticViewController.m; sourceTree = "<group>"; };
+		45075AC21BE0B7130041D856 /* StatisticViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatisticViewController.xib; sourceTree = "<group>"; };
 		4507C82E1BD8B27E00EA2790 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		451D83431BD3BE7500207CF7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		453D32001BD3C5780088271A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -57,6 +74,17 @@
 		45673E601BCB605F0033F936 /* RFDIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFDIViewController.h; sourceTree = "<group>"; };
 		45673E611BCB605F0033F936 /* RFDIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFDIViewController.m; sourceTree = "<group>"; };
 		45673E621BCB605F0033F936 /* RFDIViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RFDIViewController.xib; sourceTree = "<group>"; };
+		458197531BE09FCC0064E104 /* ChangeTicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeTicketViewController.h; sourceTree = "<group>"; };
+		458197541BE09FCC0064E104 /* ChangeTicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeTicketViewController.m; sourceTree = "<group>"; };
+		458197551BE09FCC0064E104 /* ChangeTicketViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeTicketViewController.xib; sourceTree = "<group>"; };
+		458197581BE0A3D70064E104 /* MyNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationViewController.h; sourceTree = "<group>"; };
+		458197591BE0A3D70064E104 /* MyNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationViewController.m; sourceTree = "<group>"; };
+		45869EDA1BE0AE4800360521 /* TopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopUpViewController.h; sourceTree = "<group>"; };
+		45869EDB1BE0AE4800360521 /* TopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopUpViewController.m; sourceTree = "<group>"; };
+		45869EDC1BE0AE4800360521 /* TopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopUpViewController.xib; sourceTree = "<group>"; };
+		45B063911BE0C12A00D9D909 /* DeatailedStatisticalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeatailedStatisticalViewController.h; sourceTree = "<group>"; };
+		45B063921BE0C12A00D9D909 /* DeatailedStatisticalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeatailedStatisticalViewController.m; sourceTree = "<group>"; };
+		45B063931BE0C12A00D9D909 /* DeatailedStatisticalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeatailedStatisticalViewController.xib; sourceTree = "<group>"; };
 		45E225881BDFB97C005C5D0C /* CheckTicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckTicketViewController.h; sourceTree = "<group>"; };
 		45E225891BDFB97C005C5D0C /* CheckTicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckTicketViewController.m; sourceTree = "<group>"; };
 		45E2258A1BDFB97C005C5D0C /* CheckTicketViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckTicketViewController.xib; sourceTree = "<group>"; };
@@ -104,30 +132,10 @@
 		45673E1F1BCB5CC90033F936 /* BingGu */ = {
 			isa = PBXGroup;
 			children = (
-				45673E381BCB5D1E0033F936 /* AppDelegate.h */,
-				45673E391BCB5D1E0033F936 /* AppDelegate.m */,
-				45673E601BCB605F0033F936 /* RFDIViewController.h */,
-				45673E611BCB605F0033F936 /* RFDIViewController.m */,
-				45673E621BCB605F0033F936 /* RFDIViewController.xib */,
-				45673E3D1BCB5D1E0033F936 /* QRCodeReaderViewController.h */,
-				45673E3E1BCB5D1E0033F936 /* QRCodeReaderViewController.m */,
-				45673E3F1BCB5D1E0033F936 /* QRCodeReaderViewController.xib */,
-				45673E431BCB5D1E0033F936 /* AJDHex.h */,
-				45E225881BDFB97C005C5D0C /* CheckTicketViewController.h */,
-				45E225891BDFB97C005C5D0C /* CheckTicketViewController.m */,
-				45E2258A1BDFB97C005C5D0C /* CheckTicketViewController.xib */,
-				45673E441BCB5D1E0033F936 /* AJDHex.m */,
-				45673E451BCB5D1E0033F936 /* HMAudioTool.h */,
-				45673E461BCB5D1E0033F936 /* HMAudioTool.m */,
-				45ED85C21BD6EA12009A99B4 /* MainTabBarController.h */,
-				45ED85C31BD6EA12009A99B4 /* MainTabBarController.m */,
-				45ED85C51BD6EE22009A99B4 /* myTabBarButton.h */,
-				45ED85C61BD6EE22009A99B4 /* myTabBarButton.m */,
-				45673E471BCB5D1E0033F936 /* dummy.mm */,
+				45B0638E1BE0BEA500D9D909 /* views */,
+				45B0638F1BE0BECD00D9D909 /* utilities */,
+				45B063901BE0BF0400D9D909 /* controllers */,
 				45673E2C1BCB5CC90033F936 /* Assets.xcassets */,
-				45ED85CC1BD72A41009A99B4 /* CardQueryHelper.h */,
-				45ED85CD1BD72A41009A99B4 /* CardQueryHelper.m */,
-				4507C82E1BD8B27E00EA2790 /* Info.plist */,
 				45673E201BCB5CC90033F936 /* Supporting Files */,
 			);
 			path = BingGu;
@@ -136,13 +144,74 @@
 		45673E201BCB5CC90033F936 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4507C82E1BD8B27E00EA2790 /* Info.plist */,
+				45673E381BCB5D1E0033F936 /* AppDelegate.h */,
+				45673E391BCB5D1E0033F936 /* AppDelegate.m */,
+				45673E211BCB5CC90033F936 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45B0638E1BE0BEA500D9D909 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				45B063931BE0C12A00D9D909 /* DeatailedStatisticalViewController.xib */,
+				45673E621BCB605F0033F936 /* RFDIViewController.xib */,
+				45673E3F1BCB5D1E0033F936 /* QRCodeReaderViewController.xib */,
+				45E2258A1BDFB97C005C5D0C /* CheckTicketViewController.xib */,
+				45075ABD1BE0B26E0041D856 /* RefoundViewController.xib */,
+				458197551BE09FCC0064E104 /* ChangeTicketViewController.xib */,
+				45869EDC1BE0AE4800360521 /* TopUpViewController.xib */,
+				45075AC21BE0B7130041D856 /* StatisticViewController.xib */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		45B0638F1BE0BECD00D9D909 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				45ED85C51BD6EE22009A99B4 /* myTabBarButton.h */,
+				45ED85C61BD6EE22009A99B4 /* myTabBarButton.m */,
+				45673E431BCB5D1E0033F936 /* AJDHex.h */,
+				45673E441BCB5D1E0033F936 /* AJDHex.m */,
+				45673E451BCB5D1E0033F936 /* HMAudioTool.h */,
+				45673E461BCB5D1E0033F936 /* HMAudioTool.m */,
+				45673E471BCB5D1E0033F936 /* dummy.mm */,
+				45ED85CC1BD72A41009A99B4 /* CardQueryHelper.h */,
+				45ED85CD1BD72A41009A99B4 /* CardQueryHelper.m */,
 				45673E5A1BCB5DC60033F936 /* AudioJack */,
 				45673E561BCB5D3F0033F936 /* 001.wav */,
 				45673E531BCB5D390033F936 /* MBProgressHUD.h */,
 				45673E541BCB5D390033F936 /* MBProgressHUD.m */,
-				45673E211BCB5CC90033F936 /* main.m */,
 			);
-			name = "Supporting Files";
+			name = utilities;
+			sourceTree = "<group>";
+		};
+		45B063901BE0BF0400D9D909 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				45673E601BCB605F0033F936 /* RFDIViewController.h */,
+				45673E611BCB605F0033F936 /* RFDIViewController.m */,
+				45673E3D1BCB5D1E0033F936 /* QRCodeReaderViewController.h */,
+				45673E3E1BCB5D1E0033F936 /* QRCodeReaderViewController.m */,
+				45E225881BDFB97C005C5D0C /* CheckTicketViewController.h */,
+				45E225891BDFB97C005C5D0C /* CheckTicketViewController.m */,
+				45ED85C21BD6EA12009A99B4 /* MainTabBarController.h */,
+				45ED85C31BD6EA12009A99B4 /* MainTabBarController.m */,
+				458197581BE0A3D70064E104 /* MyNavigationViewController.h */,
+				458197591BE0A3D70064E104 /* MyNavigationViewController.m */,
+				45075ABB1BE0B26E0041D856 /* RefoundViewController.h */,
+				45075ABC1BE0B26E0041D856 /* RefoundViewController.m */,
+				458197531BE09FCC0064E104 /* ChangeTicketViewController.h */,
+				458197541BE09FCC0064E104 /* ChangeTicketViewController.m */,
+				45869EDA1BE0AE4800360521 /* TopUpViewController.h */,
+				45869EDB1BE0AE4800360521 /* TopUpViewController.m */,
+				45075AC01BE0B7130041D856 /* StatisticViewController.h */,
+				45075AC11BE0B7130041D856 /* StatisticViewController.m */,
+				45B063911BE0C12A00D9D909 /* DeatailedStatisticalViewController.h */,
+				45B063921BE0C12A00D9D909 /* DeatailedStatisticalViewController.m */,
+			);
+			name = controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,12 +274,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				453D32011BD3C5780088271A /* Default@2x.png in Resources */,
+				45B063951BE0C12A00D9D909 /* DeatailedStatisticalViewController.xib in Resources */,
 				45673E571BCB5D3F0033F936 /* 001.wav in Resources */,
+				45075ABF1BE0B26E0041D856 /* RefoundViewController.xib in Resources */,
 				45673E641BCB605F0033F936 /* RFDIViewController.xib in Resources */,
 				45673E5B1BCB5DC60033F936 /* AudioJack in Resources */,
 				45673E2D1BCB5CC90033F936 /* Assets.xcassets in Resources */,
 				45E2258C1BDFB97C005C5D0C /* CheckTicketViewController.xib in Resources */,
+				45075AC41BE0B7130041D856 /* StatisticViewController.xib in Resources */,
 				451D83441BD3BE7500207CF7 /* Default-568h@2x.png in Resources */,
+				45869EDE1BE0AE4800360521 /* TopUpViewController.xib in Resources */,
+				458197571BE09FCC0064E104 /* ChangeTicketViewController.xib in Resources */,
 				45673E4C1BCB5D1E0033F936 /* QRCodeReaderViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,18 +296,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				458197561BE09FCC0064E104 /* ChangeTicketViewController.m in Sources */,
 				45673E481BCB5D1E0033F936 /* AppDelegate.m in Sources */,
 				45673E521BCB5D1E0033F936 /* dummy.mm in Sources */,
 				45ED85CE1BD72A41009A99B4 /* CardQueryHelper.m in Sources */,
+				45B063941BE0C12A00D9D909 /* DeatailedStatisticalViewController.m in Sources */,
+				45075ABE1BE0B26E0041D856 /* RefoundViewController.m in Sources */,
 				45673E221BCB5CC90033F936 /* main.m in Sources */,
 				45ED85C41BD6EA12009A99B4 /* MainTabBarController.m in Sources */,
 				45673E511BCB5D1E0033F936 /* HMAudioTool.m in Sources */,
 				45673E631BCB605F0033F936 /* RFDIViewController.m in Sources */,
+				4581975A1BE0A3D70064E104 /* MyNavigationViewController.m in Sources */,
 				45E2258B1BDFB97C005C5D0C /* CheckTicketViewController.m in Sources */,
 				45673E551BCB5D390033F936 /* MBProgressHUD.m in Sources */,
+				45075AC31BE0B7130041D856 /* StatisticViewController.m in Sources */,
 				45ED85C71BD6EE22009A99B4 /* myTabBarButton.m in Sources */,
 				45673E4B1BCB5D1E0033F936 /* QRCodeReaderViewController.m in Sources */,
 				45673E501BCB5D1E0033F936 /* AJDHex.m in Sources */,
+				45869EDD1BE0AE4800360521 /* TopUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

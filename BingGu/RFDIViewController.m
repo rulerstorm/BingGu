@@ -18,7 +18,7 @@
 @interface RFDIViewController (){
         MBProgressHUD *HUD;
 }
-@property (weak, nonatomic) IBOutlet UILabel *labelTest;
+@property (weak, nonatomic) IBOutlet UIView *viewPictureCenter;
 
 @end
 
@@ -195,7 +195,7 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         
-        self.labelTest.text = cardID;
+//        self.labelTest.text = cardID;
         
         NSInteger enterCount = [CardQueryHelper getJSON:trueID];
         
@@ -233,7 +233,9 @@
     [self.view addSubview:HUD];
     HUD.mode = MBProgressHUDModeDeterminate;
     
-
+    self.viewPictureCenter.layer.borderColor = [[UIColor colorWithRed:200.0/255.0 green:200.0/255.0  blue:200.0/255.0  alpha:0.5] CGColor];
+    self.viewPictureCenter.layer.borderWidth = 3;
+    self.viewPictureCenter.layer.cornerRadius = 10;
 }
 
 - (void)viewDidAppear:(BOOL)animated

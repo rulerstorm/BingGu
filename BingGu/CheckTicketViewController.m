@@ -33,7 +33,6 @@ RFDIViewController* _RFDIController;
     // Do any additional setup after loading the view.
     
     [self initilize];
-    NSLog(@"sdfs");
 }
 
 - (void)didReceiveMemoryWarning {
