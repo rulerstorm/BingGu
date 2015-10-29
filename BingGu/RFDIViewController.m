@@ -189,6 +189,7 @@
     });
 }
 
+
 -(void)didGetCardID:(NSString*)cardID
 {
 
@@ -197,18 +198,18 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         
-//        self.labelTest.text = cardID;
+        _reader.mute = YES;
         
         NSInteger enterCount = [CardQueryHelper getJSON:trueID];
         
 //        HUD.mode = MBProgressHUDModeIndeterminate;
         if (-1 == enterCount) {
-            #warning fail
 //            HUD.labelText = @"检票失败";
+            [self.outputView setAsFailia];
 
         }else{
-            #warning success
 //            HUD.labelText = [NSString stringWithFormat:@"检票成功，入场次数：%ld",(long)enterCount ] ;
+            [self.outputView setAsSuccess:[NSString stringWithFormat:@"%ld", (long)enterCount]];
             
         }
 //        [HUD showAnimated:YES whileExecutingBlock:^{
@@ -216,11 +217,8 @@
 //        } completionBlock:^{
 //            
 //        }];
-        
-        
-        
     });
-    sleep(3);
+//    sleep(3);
 }
 
 
@@ -370,11 +368,11 @@ length:(NSUInteger)length {
     [self powerOn];
 }
 
-#warning 还没写
+
 #pragma OutputOfCheckTickerViewDelegation
 - (void)confirmNotified
 {
-    
+    _reader.mute = NO;
 }
 
 

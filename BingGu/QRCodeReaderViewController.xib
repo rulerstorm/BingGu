@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="cameraView" destination="Edy-pc-aFV" id="MUq-zd-GQc"/>
                 <outlet property="imageViewLine" destination="lCf-vX-dDT" id="98l-dK-ZVs"/>
+                <outlet property="switcherFlashLight" destination="Rh0-M5-aId" id="6WX-mS-lgN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="cAp-kn-G2n"/>
             </connections>
         </placeholder>
@@ -54,7 +55,7 @@
                                     <state key="normal" backgroundImage="扫一扫框"/>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCf-vX-dDT">
-                                    <rect key="frame" x="0.0" y="0.0" width="203" height="2"/>
+                                    <rect key="frame" x="0.0" y="202" width="203" height="2"/>
                                     <animations/>
                                     <state key="normal" backgroundImage="扫一扫线"/>
                                 </button>

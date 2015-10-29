@@ -15,6 +15,7 @@
 		4526C8E81BE0F84900A3BC17 /* OutputOfCheckTicketView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4526C8E71BE0F84900A3BC17 /* OutputOfCheckTicketView.m */; };
 		4526C8EA1BE0F86800A3BC17 /* OutputOfCheckTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4526C8E91BE0F86800A3BC17 /* OutputOfCheckTicketView.xib */; };
 		453D32011BD3C5780088271A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 453D32001BD3C5780088271A /* Default@2x.png */; };
+		45534BA31BE24617006D59EE /* 002.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45534BA21BE24617006D59EE /* 002.wav */; };
 		45673E221BCB5CC90033F936 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45673E211BCB5CC90033F936 /* main.m */; };
 		45673E2D1BCB5CC90033F936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45673E2C1BCB5CC90033F936 /* Assets.xcassets */; };
 		45673E481BCB5D1E0033F936 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45673E391BCB5D1E0033F936 /* AppDelegate.m */; };
@@ -57,6 +58,7 @@
 		4526C8E71BE0F84900A3BC17 /* OutputOfCheckTicketView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputOfCheckTicketView.m; sourceTree = "<group>"; };
 		4526C8E91BE0F86800A3BC17 /* OutputOfCheckTicketView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OutputOfCheckTicketView.xib; sourceTree = "<group>"; };
 		453D32001BD3C5780088271A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		45534BA21BE24617006D59EE /* 002.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 002.wav; sourceTree = "<group>"; };
 		45673E1D1BCB5CC90033F936 /* BingGu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BingGu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45673E211BCB5CC90033F936 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		45673E2C1BCB5CC90033F936 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -168,6 +170,8 @@
 				4526C8E61BE0F84900A3BC17 /* OutputOfCheckTicketView.h */,
 				4526C8E71BE0F84900A3BC17 /* OutputOfCheckTicketView.m */,
 				4526C8E91BE0F86800A3BC17 /* OutputOfCheckTicketView.xib */,
+				45ED85C51BD6EE22009A99B4 /* myTabBarButton.h */,
+				45ED85C61BD6EE22009A99B4 /* myTabBarButton.m */,
 				458197551BE09FCC0064E104 /* ChangeTicketViewController.xib */,
 				45869EDC1BE0AE4800360521 /* TopUpViewController.xib */,
 				45075AC21BE0B7130041D856 /* StatisticViewController.xib */,
@@ -178,8 +182,6 @@
 		45B0638F1BE0BECD00D9D909 /* utilities */ = {
 			isa = PBXGroup;
 			children = (
-				45ED85C51BD6EE22009A99B4 /* myTabBarButton.h */,
-				45ED85C61BD6EE22009A99B4 /* myTabBarButton.m */,
 				45673E431BCB5D1E0033F936 /* AJDHex.h */,
 				45673E441BCB5D1E0033F936 /* AJDHex.m */,
 				45673E451BCB5D1E0033F936 /* HMAudioTool.h */,
@@ -189,6 +191,7 @@
 				45ED85CD1BD72A41009A99B4 /* CardQueryHelper.m */,
 				45673E5A1BCB5DC60033F936 /* AudioJack */,
 				45673E561BCB5D3F0033F936 /* 001.wav */,
+				45534BA21BE24617006D59EE /* 002.wav */,
 				45673E531BCB5D390033F936 /* MBProgressHUD.h */,
 				45673E541BCB5D390033F936 /* MBProgressHUD.m */,
 			);
@@ -287,6 +290,7 @@
 				45075ABF1BE0B26E0041D856 /* RefoundViewController.xib in Resources */,
 				45673E641BCB605F0033F936 /* RFDIViewController.xib in Resources */,
 				45673E5B1BCB5DC60033F936 /* AudioJack in Resources */,
+				45534BA31BE24617006D59EE /* 002.wav in Resources */,
 				45673E2D1BCB5CC90033F936 /* Assets.xcassets in Resources */,
 				45E2258C1BDFB97C005C5D0C /* CheckTicketViewController.xib in Resources */,
 				45075AC41BE0B7130041D856 /* StatisticViewController.xib in Resources */,

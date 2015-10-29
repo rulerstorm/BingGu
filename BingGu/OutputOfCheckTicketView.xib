@@ -19,18 +19,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pqf-LQ-i3c">
                     <rect key="frame" x="46" y="668" width="228" height="262"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="入场次数：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T90-Tw-4f2">
-                            <rect key="frame" x="66" y="150" width="86" height="22"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="入场次数：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T90-Tw-4f2">
+                            <rect key="frame" x="45" y="151" width="150" height="22"/>
                             <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UC-vH-A8K">
-                            <rect key="frame" x="150" y="147" width="42" height="27"/>
-                            <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l40-8J-3gY">
@@ -57,6 +50,13 @@
                             <animations/>
                             <state key="normal" backgroundImage="成功"/>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UC-vH-A8K">
+                            <rect key="frame" x="156" y="147" width="42" height="27"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -81,6 +81,7 @@
                 <outlet property="buttonPicture" destination="zA3-Hb-URy" id="BYu-is-qaZ"/>
                 <outlet property="labelEnterCount" destination="1UC-vH-A8K" id="oHc-kC-fR0"/>
                 <outlet property="labelIfSuccess" destination="dqS-hF-xR4" id="NDg-Vd-Awm"/>
+                <outlet property="labelTextMain" destination="T90-Tw-4f2" id="L18-wl-k4l"/>
                 <outlet property="viewCenter" destination="Pqf-LQ-i3c" id="SLD-to-z33"/>
             </connections>
             <point key="canvasLocation" x="177" y="341"/>

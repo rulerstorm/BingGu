@@ -16,6 +16,7 @@
 //@property (weak, nonatomic) IBOutlet UILabel *mainLabel;
 @property (weak, nonatomic) IBOutlet UIButton *imageViewLine;
 @property (strong, nonatomic) OutputOfCheckTicketView* outputView;
+@property (weak, nonatomic) IBOutlet UISwitch *switcherFlashLight;
 
 @property(nonatomic,retain)NSTimer *timer;
 
@@ -45,17 +46,23 @@
 
 -(void)moveLine
 {
-    static BOOL flag = YES;
-    if (flag) {
-        [UIView animateWithDuration:2.0 animations:^{
-                                            self.imageViewLine.transform = CGAffineTransformMakeTranslation(0, 202);
-        }];
-    }else{
-        [UIView animateWithDuration:2.0 animations:^{
-            self.imageViewLine.transform = CGAffineTransformMakeTranslation(0, 0);
-        }];
-    }
-    flag = !flag;
+//    static BOOL flag = YES;
+//    if (flag) {
+//        [UIView animateWithDuration:2.0 animations:^{
+//                                            self.imageViewLine.transform = CGAffineTransformMakeTranslation(0, 202);
+//        }];
+//    }else{
+//        [UIView animateWithDuration:2.0 animations:^{
+//            self.imageViewLine.transform = CGAffineTransformIdentity;
+//        }];
+//    }
+//    flag = !flag;
+
+    self.imageViewLine.transform = CGAffineTransformMakeTranslation(0, -202);
+    [UIView animateWithDuration:2.0 animations:^{
+        self.imageViewLine.transform = CGAffineTransformIdentity;
+    }];
+    
 }
 
 - (void)viewDidLoad {
@@ -80,6 +87,8 @@
     [self startRunning];
 //    [self moveLine];
     
+    
+    self.switcherFlashLight.on = NO;
     
     
     UINib* nib = [UINib nibWithNibName:@"OutputOfCheckTicketView" bundle:nil];
@@ -212,14 +221,25 @@
 - (void)doSomething:(NSString*)code
 {
 //    _mainLabel.text = code;
-    [HMAudioTool playAudioWithFilename:@"001.wav"];
-    [self.outputView setAsSuccess:@"5"];
+    static BOOL flag = YES;
+    if (flag) {
+        [HMAudioTool playAudioWithFilename:@"001.wav"];
+        [self.outputView setAsSuccess:@"5"];
+    }else{
+        [HMAudioTool playAudioWithFilename:@"002.wav"];
+        [self.outputView setAsFailia];
+    }
+    flag = !flag;
 }
 
+
 - (IBAction)switchFlashClicked:(UISwitch *)sender {
-    
-    
-    
+    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    if ([device hasTorch]) {
+        [device lockForConfiguration:nil];
+        [device setTorchMode: sender.on ? AVCaptureTorchModeOn : AVCaptureTorchModeOff];
+        [device unlockForConfiguration];
+    }
 }
 
 

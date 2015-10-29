@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonPicture;
 
 @property (weak, nonatomic) IBOutlet UIView *viewCenter;
+@property (weak, nonatomic) IBOutlet UILabel *labelTextMain;
 
 @end
 
@@ -33,6 +34,7 @@
     self.labelIfSuccess.text = @"检票成功";
     [self.buttonPicture setBackgroundImage:[UIImage imageNamed:@"成功"] forState:UIControlStateNormal];
     self.labelEnterCount.text = count;
+    self.labelTextMain.text = @"入场次数：";
     [self.buttonConfig setTitle:@"确定(3)" forState:UIControlStateNormal];
     [UIView animateWithDuration:0.5 animations:^{
         self.alpha = 1;
@@ -41,13 +43,14 @@
 }
 
 
-#warning 失败时的ui需要调整
+
 - (void)setAsFailia
 {
     self.labelIfSuccess.text = @"检票失败";
     [self.buttonPicture setBackgroundImage:[UIImage imageNamed:@"失败"] forState:UIControlStateNormal];
-//    self.labelEnterCount.text = count;
-    [self.buttonConfig setTitle:@"确定(3)" forState:UIControlStateNormal];
+    self.labelEnterCount.text = @"";
+    self.labelTextMain.text = @"请与工作人员联系";
+    [self.buttonConfig setTitle:@"确定" forState:UIControlStateNormal];
     [UIView animateWithDuration:0.5 animations:^{
         self.alpha = 1;
         self.viewCenter.transform = CGAffineTransformMakeTranslation(0, -540);
@@ -70,7 +73,6 @@
     }];
     [self.delegate confirmNotified];
 }
-
 
 
 @end
