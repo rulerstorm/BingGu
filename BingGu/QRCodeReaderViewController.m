@@ -102,7 +102,7 @@ static bool _isPushed;
     [self.view addSubview:self.outputView];
  
     
-    [self.outputView setAsFailia];
+//    [self.outputView setAsFailia];
 
 }
 

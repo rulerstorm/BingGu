@@ -64,6 +64,9 @@ RFDIViewController* _RFDIController;
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    _RFDIController = [RFDIViewController getInstanceWithOption:NO];
+    _QRController = [QRCodeReaderViewController getInstanceWithOption:NO];
+    
     self.buttonRFDI.selected = YES;
     self.buttonQRCode.selected = NO;
     self.buttonQRCode.backgroundColor = [UIColor whiteColor];

@@ -38,8 +38,12 @@
     [self.buttonConfig setTitle:@"确定(3)" forState:UIControlStateNormal];
     [UIView animateWithDuration:0.5 animations:^{
         self.alpha = 1;
-        self.viewCenter.transform = CGAffineTransformMakeTranslation(0, -540);
-//        self.viewCenter.center = self.center;
+
+        if ([UIScreen mainScreen].bounds.size.height == 480.0) {
+            self.viewCenter.center = self.center;
+        }else{
+            self.viewCenter.transform = CGAffineTransformMakeTranslation(0, -540);
+        }
     }];
 }
 
@@ -54,7 +58,12 @@
     [self.buttonConfig setTitle:@"确定" forState:UIControlStateNormal];
     [UIView animateWithDuration:0.5 animations:^{
         self.alpha = 1;
-        self.viewCenter.transform = CGAffineTransformMakeTranslation(0, -540);
+
+        if ([UIScreen mainScreen].bounds.size.height == 480.0) {
+            self.viewCenter.center = self.center;
+        }else{
+            self.viewCenter.transform = CGAffineTransformMakeTranslation(0, -540);
+        }
     }];
 }
 
