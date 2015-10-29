@@ -22,13 +22,91 @@
 @property(nonatomic,strong)UIView* myTabBar;
 @property(nonatomic,strong)NSMutableArray* subControllers;
 @property(nonatomic,strong)NSMutableArray* titles;
+@property(nonatomic,strong)UIScrollView* scrollView;
 
 @end
 
 @implementation MainTabBarController
 
+-(BOOL)checkIfStarted
+{
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    if ([@"yes" isEqual:[userDefaults objectForKey:@"isStarted"]]) {
+        return YES;
+    }else{
+        [userDefaults setObject:@"yes" forKey:@"isStarted"];
+        return NO;
+    }
+}
+
+-(void) performWelcomePages
+{
+    if (![self checkIfStarted]) {
+    
+        //init scrollView
+        CGFloat height = [UIScreen mainScreen].bounds.size.height;
+        CGFloat width = [UIScreen mainScreen].bounds.size.width;
+        CGFloat contentWidth = width * 4.0;
+        CGRect frame = CGRectMake(0, 0, width, height);
+        CGSize ContentSize = CGSizeMake(contentWidth, height);
+        self.scrollView = [[UIScrollView alloc] initWithFrame:frame];
+        self.scrollView.contentSize = ContentSize;
+        self.scrollView.pagingEnabled = YES;
+
+        //add welcome image
+    NSMutableArray* image = [[NSMutableArray alloc] init];
+    
+    if (height == 480.0) {
+        image[0] = [UIImage imageNamed:@"启动页1_4s"];
+        image[1] = [UIImage imageNamed:@"启动页2_4s"];
+        image[2] = [UIImage imageNamed:@"启动页3_4s"];
+        image[3] = [UIImage imageNamed:@"启动页4_4s"];
+        
+    }else{
+        image[0] = [UIImage imageNamed:@"启动页1_5s"];
+        image[1] = [UIImage imageNamed:@"启动页2_5s"];
+        image[2] = [UIImage imageNamed:@"启动页3_5s"];
+        image[3] = [UIImage imageNamed:@"启动页4_5s"];
+    }
+
+    for (size_t i = 0; i < 4; ++i) {
+        UIImageView* imageView = [[UIImageView alloc] init];
+        CGFloat x = i * width;
+        CGFloat y = 0;
+        imageView.frame = CGRectMake(x, y, width, height);
+        imageView.image = image[i];
+        [self.scrollView addSubview:imageView];
+    }
+    
+    //add begin button
+    CGFloat buttonH = 40;
+    CGFloat buttonW = 90;
+    UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(3.5 * width - 0.5 * buttonW, height - buttonH - 30, buttonW , buttonH)];
+    button.layer.cornerRadius = 5;
+    button.layer.borderColor = [[UIColor whiteColor] CGColor];
+    button.layer.borderWidth = 1;
+    [button setTitle:@"开始检票" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(dismissWelcomeView) forControlEvents:UIControlEventTouchUpInside];
+    [self.scrollView addSubview:button];
+    
+    [self.view addSubview:self.scrollView];
+    }
+}
+
+- (void)dismissWelcomeView
+{
+    [UIView animateWithDuration:1.0 animations:^{
+        self.scrollView.alpha = 0;
+    } completion:^(BOOL finished) {
+        [self.scrollView removeFromSuperview];
+    }];
+}
 
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self performWelcomePages];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
