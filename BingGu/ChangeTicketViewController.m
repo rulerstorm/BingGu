@@ -7,14 +7,16 @@
 //
 
 #import "ChangeTicketViewController.h"
-
+#import "QRCodeReaderViewController.h"
+#import "RFDIViewController.h"
 #define MainGreen [UIColor colorWithRed:115.0/255.0 green:189.0/255.0 blue:97.0/255.0 alpha:1.0]
 
 
 
 
 @interface ChangeTicketViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextField *textFieldID;
+@property (nonatomic) BOOL isQR;
 @end
 
 @implementation ChangeTicketViewController
@@ -40,6 +42,27 @@
 
 
 
+- (IBAction)buttonQRCodeClicked {
+    self.isQR = YES;
+    QRCodeReaderViewController * qr = [QRCodeReaderViewController getInstanceWithOption:YES];
+    [self.navigationController pushViewController: qr animated:YES];
+}
+
+- (IBAction)buttonRFDICilcked {
+    self.isQR = NO;
+    RFDIViewController * qr = [RFDIViewController getInstanceWithOption:YES];
+    [self.navigationController pushViewController: qr animated:YES];
+}
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    if (self.isQR) {
+        self.textFieldID.text = [QRCodeReaderViewController getInstanceWithOption:YES].cardCode;
+    }else{
+        self.textFieldID.text = [RFDIViewController getInstanceWithOption:YES].cardCode;
+    }
+}
 
 
 

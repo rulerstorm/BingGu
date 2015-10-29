@@ -14,4 +14,8 @@
 
 @interface RFDIViewController : UIViewController <MBProgressHUDDelegate,ACRAudioJackReaderDelegate, OutputOfCheckTicketViewDelegate>
 
+@property (strong, nonatomic) NSString* cardCode;
+
++ (instancetype)getInstanceWithOption:(BOOL)pushed;
+
 @end 

@@ -23,4 +23,8 @@
 
 - (void)stopRunning; 
 
+@property (strong, nonatomic) NSString* cardCode;
+
++ (instancetype)getInstanceWithOption:(BOOL)pushed;
+
 @end

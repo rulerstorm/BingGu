@@ -39,6 +39,7 @@
     [UIView animateWithDuration:0.5 animations:^{
         self.alpha = 1;
         self.viewCenter.transform = CGAffineTransformMakeTranslation(0, -540);
+//        self.viewCenter.center = self.center;
     }];
 }
 
@@ -64,6 +65,8 @@
     
     self.buttonConfig.layer.cornerRadius = 15;
     self.viewCenter.layer.cornerRadius = 10;
+    
+//    self.viewCenter.frame = 
 }
 
 - (IBAction)buttonConfigClicked:(id)sender {

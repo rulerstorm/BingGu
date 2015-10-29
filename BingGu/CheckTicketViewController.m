@@ -42,8 +42,8 @@ RFDIViewController* _RFDIController;
 
 -(void)initilize
 {
-    _RFDIController = [[RFDIViewController alloc] init];
-    _QRController = [[QRCodeReaderViewController alloc] init];
+    _RFDIController = [RFDIViewController getInstanceWithOption:NO];
+    _QRController = [QRCodeReaderViewController getInstanceWithOption:NO]; //[[QRCodeReaderViewController alloc] init];
     
     [self.buttonRFDI setTitleColor:[UIColor whiteColor]  forState:UIControlStateSelected];
     [self.buttonQRCode setTitleColor:[UIColor whiteColor]  forState:UIControlStateSelected];
@@ -61,6 +61,21 @@ RFDIViewController* _RFDIController;
     
 }
 
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.buttonRFDI.selected = YES;
+    self.buttonQRCode.selected = NO;
+    self.buttonQRCode.backgroundColor = [UIColor whiteColor];
+    [self.viewContent insertSubview:_QRController.view atIndex:0];
+    self.buttonRFDI.backgroundColor = MainGreen;
+    [_RFDIController.view removeFromSuperview];
+    
+    [_RFDIController viewWillDisappear:NO];
+    [_QRController viewWillAppear:YES];
+}
+
+
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
@@ -76,6 +91,8 @@ RFDIViewController* _RFDIController;
         sleep(1);
     } completionBlock:^{
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        
+        [_RFDIController viewWillAppear:YES];
         
         self.buttonRFDI.selected = NO;
         self.buttonQRCode.selected = YES;
@@ -95,18 +112,16 @@ RFDIViewController* _RFDIController;
     hud.labelText = @"正在切换二维码检票";
     [self.view addSubview:hud];
     [hud showAnimated:YES whileExecutingBlock:^{
-        usleep(50000);
+        sleep(1);
     } completionBlock:^{
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         
+        [_QRController viewWillAppear:YES];
+        
         self.buttonRFDI.selected = YES;
         self.buttonQRCode.selected = NO;
-        
         self.buttonQRCode.backgroundColor = [UIColor whiteColor];
-
-//        self.buttonQRCode.backgroundColor = [UIColor colorWithRed:115.0/255.0 green:189.0/255.0  blue:97.0/255.0  alpha:1.0];
         [self.viewContent insertSubview:_QRController.view atIndex:0];
-        
         self.buttonRFDI.backgroundColor = MainGreen;
         [_RFDIController.view removeFromSuperview];
     }];

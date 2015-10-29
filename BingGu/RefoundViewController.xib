@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RefoundViewController">
             <connections>
+                <outlet property="textFieldID" destination="Eir-R2-0xw" id="gQA-c4-l96"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -45,11 +46,17 @@
                     <rect key="frame" x="29" y="183" width="100" height="37"/>
                     <animations/>
                     <state key="normal" backgroundImage="扫RFID换票"/>
+                    <connections>
+                        <action selector="buttonRFDICilcked" destination="-1" eventType="touchUpInside" id="GRf-yn-X5W"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N40-2j-cn1">
                     <rect key="frame" x="191" y="183" width="100" height="37"/>
                     <animations/>
                     <state key="normal" backgroundImage="扫二维码换票"/>
+                    <connections>
+                        <action selector="buttonQRCodeClicked" destination="-1" eventType="touchUpInside" id="PRB-PD-LlA"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hVf-gv-qSM">
                     <rect key="frame" x="29" y="252" width="262" height="42"/>

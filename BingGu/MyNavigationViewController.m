@@ -37,11 +37,26 @@
     return UIStatusBarStyleLightContent;
 }
 
+- (id)initWithDelegation:(id<MainTabBarDelegate>)delegation andRootviewController:(UIViewController*)controller
+{
+    self.delegation = delegation;
+    return [self initWithRootViewController:controller];
+}
 
 
+-(UIViewController *)popViewControllerAnimated:(BOOL)animated
+{
+//    NSLog(@"pop....");
+    [self.delegation poping];
+    return [super popViewControllerAnimated:animated];
+}
 
-
-
+-(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+//    NSLog(@"push....");
+    [self.delegation pushing];
+    [super pushViewController:viewController animated:animated];
+}
 
 
 /*

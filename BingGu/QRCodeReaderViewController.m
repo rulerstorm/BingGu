@@ -44,20 +44,26 @@
 //    
 //}
 
+static QRCodeReaderViewController* _instance;
+static bool _isPushed;
++ (instancetype)getInstanceWithOption:(BOOL)pushed
+{
+    _isPushed = pushed;
+    if (_instance == nil) {
+        @synchronized(self) {
+            if (_instance == nil) {
+                _instance = [[self alloc]init];
+            }
+        }
+    }
+    return _instance;
+}
+
+
 -(void)moveLine
 {
-//    static BOOL flag = YES;
-//    if (flag) {
-//        [UIView animateWithDuration:2.0 animations:^{
-//                                            self.imageViewLine.transform = CGAffineTransformMakeTranslation(0, 202);
-//        }];
-//    }else{
-//        [UIView animateWithDuration:2.0 animations:^{
-//            self.imageViewLine.transform = CGAffineTransformIdentity;
-//        }];
-//    }
-//    flag = !flag;
-
+//    [self stopRunning];
+//    [self startRunning];
     self.imageViewLine.transform = CGAffineTransformMakeTranslation(0, -202);
     [UIView animateWithDuration:2.0 animations:^{
         self.imageViewLine.transform = CGAffineTransformIdentity;
@@ -72,8 +78,6 @@
 
     _previewLayer.frame = _cameraView.bounds;
     [_cameraView.layer addSublayer:_previewLayer];
-    
-//    NSLog(@"sdfs");
     
     // turn on and off the camera if this app goes into the background/foreground.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
@@ -96,7 +100,10 @@
     self.outputView.alpha = 0;
     self.outputView.delegate = self;
     [self.view addSubview:self.outputView];
+ 
     
+    [self.outputView setAsFailia];
+
 }
 
 - (void)dealloc {
@@ -107,15 +114,13 @@
 {
     //start scan~~~~
     [self startRunning];
-//    NSLog(@"sdfsdfs");
 
 }
 
-//- (void)viewWillDisappear:(BOOL)animated
-//{
-////    [self stopRunning];
-////    NSLog(@"sdddddfs");
-//}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self stopRunning];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -181,13 +186,17 @@
 
 - (void)startRunning
 {
+    if (_isRunning == YES) {
+        return;
+    }
     [_captureSession startRunning];
     _metadataOutput.metadataObjectTypes = _metadataOutput.availableMetadataObjectTypes;
     _isRunning = YES;
 }
 
-- (void)stopRunning {
-
+- (void)stopRunning
+{
+    
     [_captureSession stopRunning];
     _isRunning = NO;
 }
@@ -221,15 +230,20 @@
 - (void)doSomething:(NSString*)code
 {
 //    _mainLabel.text = code;
-    static BOOL flag = YES;
-    if (flag) {
-        [HMAudioTool playAudioWithFilename:@"001.wav"];
-        [self.outputView setAsSuccess:@"5"];
+    if (_isPushed) {
+        self.cardCode = code;
+        [self.navigationController popViewControllerAnimated:YES];
     }else{
-        [HMAudioTool playAudioWithFilename:@"002.wav"];
-        [self.outputView setAsFailia];
+        static BOOL flag = YES;
+        if (flag) {
+            [HMAudioTool playAudioWithFilename:@"001.wav"];
+            [self.outputView setAsSuccess:@"5"];
+        }else{
+            [HMAudioTool playAudioWithFilename:@"002.wav"];
+            [self.outputView setAsFailia];
+        }
+        flag = !flag;
     }
-    flag = !flag;
 }
 
 

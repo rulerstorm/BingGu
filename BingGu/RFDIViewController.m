@@ -13,7 +13,7 @@
 #import "CardQueryHelper.h"
 
 
-#define TTT 100  //waiting length
+#define TTT 50  //waiting length
 
 
 @interface RFDIViewController (){
@@ -42,6 +42,24 @@
 //    NSLog(@"touch");
 //
 //}
+
+static RFDIViewController* _instance;
+static bool _isPushed;
++ (instancetype)getInstanceWithOption:(BOOL)pushed
+{
+    _isPushed = pushed;
+    if (_instance == nil) {
+        @synchronized(self) {
+            if (_instance == nil) {
+                _instance = [[self alloc]init];
+            }
+        }
+    }
+    return _instance;
+}
+
+
+
 
 #pragma mark toolBox
 
@@ -152,12 +170,13 @@
             _isPowerOned = NO;
             _isTransmitReturned = NO;
             _resultNotified = NO;
+            _reader.mute = NO;
             
             if (![self powerOn]) {
                 NSLog(@"powerOn error");
             }else{
                 //wait powerOn
-                while (!_isPowerOned) {
+                while (!_isPowerOned && _isRunning) {
                     NSLog(@"waiting for _isPowerOned....");
                     usleep(200000);   //0.2s
                     _specialCount++;
@@ -170,16 +189,33 @@
                 }
                 _specialCount = 0;
                 
+                if (!_isRunning) {
+                    return ;
+                }
+                
                 if (![self transmit]) {
                     NSLog(@"transmit error");
                 }else{
                     
                     //wait transmit
-                    while (!_isTransmitReturned) {
+                    static int _transmitCount = 0;
+                    while (!_isTransmitReturned && _isRunning) {
                         NSLog(@"waiting for _isTransmitReturned....");
                         usleep(200000);   //0.2s
+
+                        _transmitCount = (_transmitCount + 1) % 6;
+                        if (_transmitCount == 5) {
+                             dispatch_async(dispatch_get_main_queue(), ^{
+                                 [self viewWillAppear:NO];
+                             });
+                                            
+                            _isRunning = NO;
+                        }
                     }
-                    
+                    _transmitCount = 0;
+                    if (!_isRunning) {
+                        return ;
+                    }
 //                    dispatch_async(dispatch_get_main_queue(), ^{
                         [self didGetCardID:_outPut];
 //                    });
@@ -200,23 +236,21 @@
         
         _reader.mute = YES;
         
-        NSInteger enterCount = [CardQueryHelper getJSON:trueID];
-        
-//        HUD.mode = MBProgressHUDModeIndeterminate;
-        if (-1 == enterCount) {
-//            HUD.labelText = @"检票失败";
-            [self.outputView setAsFailia];
+        if (_isPushed) {
+            self.cardCode = trueID;
+            [self.navigationController popViewControllerAnimated:YES];
 
         }else{
-//            HUD.labelText = [NSString stringWithFormat:@"检票成功，入场次数：%ld",(long)enterCount ] ;
-            [self.outputView setAsSuccess:[NSString stringWithFormat:@"%ld", (long)enterCount]];
-            
+            NSInteger enterCount = [CardQueryHelper getJSON:trueID];
+            if (-1 == enterCount) {
+                [self.outputView setAsFailia];
+                
+            }else{
+                [self.outputView setAsSuccess:[NSString stringWithFormat:@"%ld", (long)enterCount]];
+            }
         }
-//        [HUD showAnimated:YES whileExecutingBlock:^{
-//            sleep(2);
-//        } completionBlock:^{
-//            
-//        }];
+
+
     });
 //    sleep(3);
 }
@@ -253,22 +287,25 @@
     
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    _isRunning = YES;
-    
     [self setSystemVolumeToMax];
     //    [HUD showWhileExecuting:@selector(waitReaderPluggedAndReset) onTarget:self withObject:nil animated:YES];
     [HUD showAnimated:YES whileExecutingBlock:^{
         [self waitReaderPluggedAndReset];
     } completionBlock:^{
-        [self runLoop];
+//        if (!_isRunning) {
+            _isRunning = YES;
+            _reader.mute = NO;
+            [self runLoop];
+//        }
     }];
     
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    _reader.mute = YES;
     _isRunning = NO;
 }
 //@section reset Resetting the reader
@@ -337,7 +374,7 @@ ACRPiccCardTypeAutoRats;
 - (void)reader:(ACRAudioJackReader *)reader didSendPiccAtr:(const uint8_t *)atr
 length:(NSUInteger)length {
     
-    // TODO: Add code here to process the ATR.
+    // Add code here to process the ATR.
     NSLog(@"didSendPiccAtr, powerOn ok");
     
     _isPowerOned = YES;
@@ -347,7 +384,7 @@ length:(NSUInteger)length {
 didSendPiccResponseApdu:(const uint8_t *)responseApdu
 length:(NSUInteger)length {
     
-    // TODO: Add code here to process the response APDU.
+    // Add code here to process the response APDU.
     NSLog(@"didSendPiccResponseApdu, transmit ok。length:%lu", (unsigned long)length);
 
 //    while (!_resultNotified) {
@@ -363,7 +400,7 @@ length:(NSUInteger)length {
 - (void)reader:(ACRAudioJackReader *)reader didNotifyResult:(ACRResult *)result {
     
     _resultNotified = YES;
-    // TODO: Add code here to process the notification.
+    // Add code here to process the notification.
     NSLog(@"didNotifyResult, timeOut!!!");
     [self powerOn];
 }

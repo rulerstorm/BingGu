@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "myTabBarButton.h"
 
-@interface MainTabBarController : UITabBarController
+@protocol MainTabBarDelegate <NSObject>
+-(void) pushing;
+-(void) poping;
+@end
+
+
+
+@interface MainTabBarController : UITabBarController <MainTabBarDelegate>
 
 @end

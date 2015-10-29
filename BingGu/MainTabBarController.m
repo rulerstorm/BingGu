@@ -15,8 +15,6 @@
 #import "StatisticViewController.h"
 
 
-
-
 @interface MainTabBarController ()
 
 @property(nonatomic,strong)UIView* myTabBar;
@@ -128,8 +126,16 @@
     self.selectedIndex = 2;
     
 
-    
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyBoard)];
+    tapGesture.cancelsTouchesInView = NO;  //
+    [self.view addGestureRecognizer:tapGesture];
 }
+
+-(void) dismissKeyBoard
+{
+    [self.view endEditing:YES];
+}
+
 
 - (void)addBarItems
 {
@@ -164,15 +170,18 @@
 {
     self.subControllers = [[NSMutableArray alloc]init];
     
-    _subControllers[0] = [[MyNavigationViewController alloc] initWithRootViewController: [[TopUpViewController alloc] init]];
-    _subControllers[1] = [[MyNavigationViewController alloc] initWithRootViewController: [[RefoundViewController alloc] init]];
+    _subControllers[0] = [[MyNavigationViewController alloc] initWithDelegation:self andRootviewController:[[TopUpViewController alloc] init]];
+    
+    _subControllers[1] = [[MyNavigationViewController alloc] initWithDelegation:self andRootviewController:[[RefoundViewController alloc] init]];
     _subControllers[2] = [[CheckTicketViewController alloc]init];
-    _subControllers[3] = [[MyNavigationViewController alloc] initWithRootViewController: [[ChangeTicketViewController alloc] init]];
-    _subControllers[4] = [[MyNavigationViewController alloc] initWithRootViewController: [[StatisticViewController alloc] init]];
+    _subControllers[3] = [[MyNavigationViewController alloc] initWithDelegation:self andRootviewController:[[ChangeTicketViewController alloc] init]];
+    _subControllers[4] = [[MyNavigationViewController alloc] initWithDelegation:self andRootviewController:[[StatisticViewController alloc] init]];
     
     for (UIViewController* pages in _subControllers) {
         [self addChildViewController:pages];
     }
+    
+    [self poping];
 }
 
 
@@ -186,9 +195,24 @@
     caller.selected = YES;
     caller.backgroundColor = [UIColor colorWithRed:117.0/255.0 green:117.0/255.0  blue:117.0/255.0  alpha:1.0];
     
-    
     self.selectedIndex = caller.myIndex;
-    
+}
+
+#pragma delegating method
+-(void)pushing
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.myTabBar.transform = CGAffineTransformMakeTranslation(0, 60);
+        self.myTabBar.alpha = 0.3;
+    }];
+}
+
+-(void)poping
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.myTabBar.transform = CGAffineTransformIdentity;
+        self.myTabBar.alpha = 1;
+    }];
 }
 
 
