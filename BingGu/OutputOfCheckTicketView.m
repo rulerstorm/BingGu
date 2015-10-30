@@ -51,7 +51,7 @@
 
 - (void)setAsFailia
 {
-    self.labelIfSuccess.text = @"检票失败";
+    self.labelIfSuccess.text = @"ID号不存在";
     [self.buttonPicture setBackgroundImage:[UIImage imageNamed:@"失败"] forState:UIControlStateNormal];
     self.labelEnterCount.text = @"";
     self.labelTextMain.text = @"请与工作人员联系";

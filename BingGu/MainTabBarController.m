@@ -104,6 +104,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self performWelcomePages];
+    
+    //turn off auto lock screen
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [UIApplication sharedApplication].idleTimerDisabled = NO;
 }
 
 - (void)viewDidLoad {

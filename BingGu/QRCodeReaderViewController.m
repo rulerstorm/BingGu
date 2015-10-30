@@ -247,6 +247,7 @@ static bool _isPushed;
 }
 
 
+#pragma flash control
 - (IBAction)switchFlashClicked:(UISwitch *)sender {
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     if ([device hasTorch]) {
@@ -261,6 +262,7 @@ static bool _isPushed;
 - (void)confirmNotified
 {
     [self startRunning];
+    [self switchFlashClicked:self.switcherFlashLight];
 }
 
 
