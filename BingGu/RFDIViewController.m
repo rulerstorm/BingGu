@@ -164,6 +164,7 @@ static bool _isPushed;
 
 - (void) runLoop
 {
+    __weak RFDIViewController* vcSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         while (_isRunning) {
             NSLog(@"looping...");
@@ -172,7 +173,7 @@ static bool _isPushed;
             _resultNotified = NO;
             _reader.mute = NO;
             
-            if (![self powerOn]) {
+            if (![vcSelf powerOn]) {
                 NSLog(@"powerOn error");
             }else{
                 //wait powerOn
@@ -182,7 +183,7 @@ static bool _isPushed;
                     _specialCount++;
                     if (_specialCount > 10) {
                         _specialCount = 0;
-                        if (![self powerOn]) {
+                        if (![vcSelf powerOn]) {
                             NSLog(@"powerOn error");
                         }
                     }
@@ -193,7 +194,7 @@ static bool _isPushed;
                     return ;
                 }
                 
-                if (![self transmit]) {
+                if (![vcSelf transmit]) {
                     NSLog(@"transmit error");
                 }else{
                     
@@ -206,7 +207,7 @@ static bool _isPushed;
                         _transmitCount = (_transmitCount + 1) % 6;
                         if (_transmitCount == 5) {
                              dispatch_async(dispatch_get_main_queue(), ^{
-                                 [self viewWillAppear:NO];
+                                 [vcSelf viewWillAppear:NO];
                              });
                                             
                             _isRunning = NO;
@@ -217,7 +218,7 @@ static bool _isPushed;
                         return ;
                     }
 //                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self didGetCardID:_outPut];
+                        [vcSelf didGetCardID:_outPut];
 //                    });
                 }
             }
@@ -232,21 +233,23 @@ static bool _isPushed;
     NSString* trueID = [cardID substringToIndex:20];
 //    NSLog(@"%@-----------", trueID);
     
+    
+    __weak RFDIViewController* vcSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         
         _reader.mute = YES;
         
         if (_isPushed) {
-            self.cardCode = trueID;
-            [self.navigationController popViewControllerAnimated:YES];
+            vcSelf.cardCode = trueID;
+            [vcSelf.navigationController popViewControllerAnimated:YES];
 
         }else{
             NSInteger enterCount = [CardQueryHelper getJSON:trueID];
             if (-1 == enterCount) {
-                [self.outputView setAsFailia];
+                [vcSelf.outputView setAsFailia];
                 
             }else{
-                [self.outputView setAsSuccess:[NSString stringWithFormat:@"%ld", (long)enterCount]];
+                [vcSelf.outputView setAsSuccess:[NSString stringWithFormat:@"%ld", (long)enterCount]];
             }
         }
 

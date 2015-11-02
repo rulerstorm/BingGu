@@ -211,10 +211,12 @@ static bool _isPushed;
                  AVMetadataMachineReadableCodeObject *code = (AVMetadataMachineReadableCodeObject*)[_previewLayer transformedMetadataObjectForMetadataObject:obj];
                  
                  //important!! here is not main queue!
+                 //avoid circle ref
+                 __weak QRCodeReaderViewController* vc = self;
                  dispatch_async(dispatch_get_main_queue(), ^{
-                     [self stopRunning];
-                     [self doSomething:code.stringValue];             //UI stuff
-//                     [self startRunning];
+                     [vc stopRunning];
+                     [vc doSomething:code.stringValue];             //UI stuff
+//                     [vc startRunning];
                  });
 //              sleep(2);
              }
