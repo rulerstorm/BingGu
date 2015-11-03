@@ -1,4 +1,4 @@
-ver: 1.0     
+ver: 1.1     
 date: 20151103     
 
 ## check ticket     
@@ -29,9 +29,19 @@ http://120.27.54.111:8080/updateMoney.php
     - validate: 200(sucess) or 0(fail)       
 
 
+## get the money number of a card     
+##### URL: 
+http://120.27.54.111:8080/getMoney.php     
+##### GET:     
+    - id (the ID need refound)       
+##### return type: json    
+    - validate: 200(sucess) or 0(fail)    
+    - money: a number (if sucess)  
+
+
 ## top up      
 ##### URL: 
-http://120.27.54.111:8080/updateMoney.php     
+http://120.27.54.111:8080/updateMoney.php  (yes, same to refound)
 ##### GET:     
     - id (the ID need refound)     
     - money `(important!! this value should be a positive value and the value is how much the customer top uped)`     
