@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OutputOfCheckTicketView.h"
 
-@interface ChangeTicketViewController : UIViewController
+@interface ChangeTicketViewController : UIViewController <OutputOfCheckTicketViewDelegate>
 
 @end

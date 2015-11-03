@@ -7,6 +7,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeatailedStatisticalViewController">
             <connections>
+                <outlet property="textA" destination="HZi-U2-0tw" id="jfD-yc-Tbx"/>
+                <outlet property="textB" destination="kov-cc-kj7" id="3da-Dz-kD3"/>
+                <outlet property="textC" destination="C50-rR-kVy" id="cq9-Vb-tef"/>
+                <outlet property="textD" destination="AHe-MF-G0f" id="GUX-la-yRd"/>
+                <outlet property="textE" destination="EYw-xz-S20" id="PlP-n1-dHt"/>
+                <outlet property="textTotal" destination="UbW-XC-acN" id="mZb-z7-P0d"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,30 +21,136 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="731-eP-lKh">
-                    <rect key="frame" x="108" y="367" width="105" height="45"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="731-eP-lKh">
+                    <rect key="frame" x="108" y="370" width="105" height="45"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="Axe-WF-ech"/>
+                        <constraint firstAttribute="width" constant="105" id="Rjx-RY-Usq"/>
+                    </constraints>
                     <state key="normal" backgroundImage="8点击刷新按钮"/>
+                    <connections>
+                        <action selector="buttonRefreshClicked" destination="-1" eventType="touchUpInside" id="aeq-17-tNm"/>
+                    </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="731-a2-Fsh">
-                    <rect key="frame" x="19" y="302" width="283" height="42"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O11-5N-Ady">
+                    <rect key="frame" x="30" y="80" width="261" height="215"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ml-aH-R3E">
+                            <rect key="frame" x="0.0" y="0.0" width="261" height="36"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnN-kQ-gYx">
+                                    <rect key="frame" x="0.0" y="0.0" width="84" height="36"/>
+                                    <animations/>
+                                    <state key="normal" title="A类票" backgroundImage="A类票"/>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-- 张" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZi-U2-0tw">
+                                    <rect key="frame" x="177" y="7" width="84" height="21"/>
+                                    <animations/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <animations/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LjL-AH-2f2">
+                            <rect key="frame" x="0.0" y="44" width="261" height="36"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbD-dt-YMq">
+                                    <rect key="frame" x="0.0" y="0.0" width="84" height="36"/>
+                                    <animations/>
+                                    <state key="normal" title="B类票" backgroundImage="A类票"/>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-- 张" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kov-cc-kj7">
+                                    <rect key="frame" x="177" y="7" width="84" height="21"/>
+                                    <animations/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <animations/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FgL-25-siK">
+                            <rect key="frame" x="0.0" y="88" width="261" height="36"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUn-a7-2An">
+                                    <rect key="frame" x="0.0" y="0.0" width="84" height="36"/>
+                                    <animations/>
+                                    <state key="normal" title="C类票" backgroundImage="A类票"/>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-- 张" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C50-rR-kVy">
+                                    <rect key="frame" x="177" y="8" width="84" height="21"/>
+                                    <animations/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <animations/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CZN-bc-Ucg">
+                            <rect key="frame" x="0.0" y="132" width="261" height="36"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNf-Yb-2uA">
+                                    <rect key="frame" x="0.0" y="0.0" width="84" height="36"/>
+                                    <animations/>
+                                    <state key="normal" title="D类票" backgroundImage="A类票"/>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-- 张" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHe-MF-G0f">
+                                    <rect key="frame" x="177" y="7" width="84" height="21"/>
+                                    <animations/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <animations/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kmS-Ra-rlI">
+                            <rect key="frame" x="0.0" y="176" width="261" height="36"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daL-uu-CLh">
+                                    <rect key="frame" x="0.0" y="0.0" width="84" height="36"/>
+                                    <animations/>
+                                    <state key="normal" title="E类票" backgroundImage="A类票"/>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-- 张" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYw-xz-S20">
+                                    <rect key="frame" x="177" y="8" width="84" height="21"/>
+                                    <animations/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <animations/>
+                        </view>
+                    </subviews>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="215" id="ozg-on-UVy"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="731-a2-Fsh" userLabel="View333">
+                    <rect key="frame" x="19" y="313" width="283" height="42"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="活动总计检票：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbZ-Qi-KwX">
-                            <rect key="frame" x="0.0" y="14" width="126" height="21"/>
+                            <rect key="frame" x="8" y="14" width="126" height="21"/>
                             <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="39693" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbW-XC-acN">
-                            <rect key="frame" x="120" y="4" width="137" height="35"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="---" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbW-XC-acN">
+                            <rect key="frame" x="133" y="4" width="116" height="35"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
                             <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="张" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQr-CP-jEg">
-                            <rect key="frame" x="265" y="14" width="25" height="21"/>
+                            <rect key="frame" x="254" y="13" width="25" height="21"/>
                             <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -46,14 +158,28 @@
                         </label>
                     </subviews>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="283" id="BUo-ok-J5D"/>
+                        <constraint firstAttribute="height" constant="42" id="fYl-iM-TVQ"/>
+                    </constraints>
                 </view>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="O11-5N-Ady" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="5N5-Pq-FVr"/>
+                <constraint firstItem="731-eP-lKh" firstAttribute="top" secondItem="731-a2-Fsh" secondAttribute="bottom" constant="15" id="BiH-Vj-59i"/>
+                <constraint firstItem="O11-5N-Ady" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="D4d-Mq-NGE"/>
+                <constraint firstItem="731-a2-Fsh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="XcO-3U-bxR"/>
+                <constraint firstItem="O11-5N-Ady" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gtT-81-0Wh"/>
+                <constraint firstItem="731-eP-lKh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="370" id="nh6-MK-GVx"/>
+                <constraint firstItem="731-eP-lKh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tSM-ew-OE5"/>
+            </constraints>
             <point key="canvasLocation" x="243" y="269"/>
         </view>
     </objects>
     <resources>
         <image name="8点击刷新按钮" width="115" height="45"/>
+        <image name="A类票" width="77" height="35"/>
     </resources>
 </document>

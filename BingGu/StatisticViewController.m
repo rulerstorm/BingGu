@@ -8,9 +8,13 @@
 
 #import "StatisticViewController.h"
 #import "DeatailedStatisticalViewController.h"
+#import "MBProgressHUD.h"
 
 
 @interface StatisticViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *textTicket;
+@property (weak, nonatomic) IBOutlet UILabel *textMoney;
+@property (weak, nonatomic) IBOutlet UILabel *textRefound;
 
 @end
 
@@ -28,6 +32,39 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    MBProgressHUD* hud = [[MBProgressHUD alloc] init];
+    hud.labelText = @"请稍等...";
+    [self.view addSubview:hud];
+    [hud showAnimated:YES whileExecutingBlock:^{
+        usleep(500000);
+    }completionBlock:^{
+        NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+        NSString* tickedCount = [userDefaults objectForKey:@"tickedCount"];
+        NSString* topUpCount = [userDefaults objectForKey:@"topUpCount"];
+        NSString* refoundCount = [userDefaults objectForKey:@"refoundCount"];
+        
+        if (tickedCount) {
+            self.textTicket.text = tickedCount;
+        }else{
+            self.textTicket.text = @"0 ";
+        }
+        if (topUpCount) {
+            self.textMoney.text = topUpCount;
+        }else{
+            self.textMoney.text = @"0 ";
+        }
+        if (refoundCount) {
+            self.textRefound.text = refoundCount;
+        }else{
+            self.textRefound.text = @"0 ";
+        }
+    }];
+}
 
 - (void) initialize
 {

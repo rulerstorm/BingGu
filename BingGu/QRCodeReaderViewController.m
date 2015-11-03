@@ -8,6 +8,7 @@
 
 #import "QRCodeReaderViewController.h"
 #import "HMAudioTool.h"
+#import "CardQueryHelper.h"
 
 
 
@@ -236,15 +237,16 @@ static bool _isPushed;
         self.cardCode = code;
         [self.navigationController popViewControllerAnimated:YES];
     }else{
-        static BOOL flag = YES;
-        if (flag) {
-            [HMAudioTool playAudioWithFilename:@"001.wav"];
-            [self.outputView setAsSuccess:@"5"];
-        }else{
+
+        NSInteger enterCount = [CardQueryHelper checkTicket:code];
+        if (-1 == enterCount) {
             [HMAudioTool playAudioWithFilename:@"002.wav"];
             [self.outputView setAsFailia];
+            
+        }else{
+            [HMAudioTool playAudioWithFilename:@"001.wav"];
+            [self.outputView setAsSuccess:[NSString stringWithFormat:@"%ld", (long)enterCount]];
         }
-        flag = !flag;
     }
 }
 

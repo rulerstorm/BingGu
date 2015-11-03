@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RefoundViewController">
             <connections>
                 <outlet property="textFieldID" destination="Eir-R2-0xw" id="gQA-c4-l96"/>
+                <outlet property="textFieldMoney" destination="tFf-0T-OBM" id="Srx-fZ-rdT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -82,6 +83,9 @@
                     <rect key="frame" x="108" y="333" width="105" height="45"/>
                     <animations/>
                     <state key="normal" backgroundImage="确定退款按钮"/>
+                    <connections>
+                        <action selector="buttonRefoundClicked" destination="-1" eventType="touchUpInside" id="9O2-HX-KBm"/>
+                    </connections>
                 </button>
             </subviews>
             <animations/>

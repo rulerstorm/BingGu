@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangeTicketViewController">
             <connections>
                 <outlet property="textFieldID" destination="kEA-eZ-gMh" id="IJr-Av-125"/>
+                <outlet property="textFieldOldID" destination="8HO-Zr-hjw" id="BAP-fb-Jg0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -81,6 +82,9 @@
                     <rect key="frame" x="108" y="333" width="105" height="45"/>
                     <animations/>
                     <state key="normal" backgroundImage="确定更换门票"/>
+                    <connections>
+                        <action selector="buttonChangeClicked" destination="-1" eventType="touchUpInside" id="AU7-Ro-Dz9"/>
+                    </connections>
                 </button>
             </subviews>
             <animations/>

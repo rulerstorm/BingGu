@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopUpViewController">
             <connections>
                 <outlet property="textFieldID" destination="e7G-HT-Uta" id="yaH-XD-FfN"/>
+                <outlet property="textFieldMoney" destination="VMp-UH-HnJ" id="OTC-XB-SVD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -65,7 +66,7 @@
                             <rect key="frame" x="91" y="2" width="170" height="30"/>
                             <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="金额(元)：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mar-CA-lAA">
                             <rect key="frame" x="0.0" y="6" width="83" height="21"/>
@@ -81,6 +82,9 @@
                     <rect key="frame" x="108" y="333" width="105" height="45"/>
                     <animations/>
                     <state key="normal" backgroundImage="确定充值按钮"/>
+                    <connections>
+                        <action selector="buttonTopUpClicked" destination="-1" eventType="touchUpInside" id="T8k-1W-oMY"/>
+                    </connections>
                 </button>
             </subviews>
             <animations/>

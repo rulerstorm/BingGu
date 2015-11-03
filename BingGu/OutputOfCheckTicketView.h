@@ -16,6 +16,7 @@
 @interface OutputOfCheckTicketView : UIView
 
 - (void)setAsSuccess:(NSString*)count;
+- (void)setAsSuccessWithString:(NSString*)string;
 - (void)setAsFailia;
 
 @property (weak, nonatomic) id<OutputOfCheckTicketViewDelegate> delegate;

@@ -11,16 +11,9 @@ $query = 'select * from ticket where cardID="'.$inID.'"';
 $result = mysql_query($query) or die('query faild:' . mysql_error());
 if($row = mysql_fetch_array($result)){
   
-  $update_ticket = 'update ticket set enterCount = enterCount + 1 where cardID="'.$inID.'"';
-  mysql_query($update_ticket) ;
-  if($row['enterCount'] == 1){
-    $update_event = 'update event set '.$row['card_type'].' = '.$row['card_type'].' + 1 where eventID = '.$row['enentID'];
-    mysql_query($update_event);
-}
-
   $output = array(
     'validate' => 200,
-    'enterCount' => $row['enterCount']
+    'money' => $row['money']
     );
   echo json_encode($output);
 }else{
@@ -33,10 +26,5 @@ mysql_free_result($result);
 mysql_close($link);
 
 ?>
-
-
-
-
-
 
 

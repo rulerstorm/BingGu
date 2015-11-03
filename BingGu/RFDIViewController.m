@@ -228,12 +228,8 @@ static bool _isPushed;
 
 
 -(void)didGetCardID:(NSString*)cardID
-{
-
-    NSString* trueID = [cardID substringToIndex:20];
-//    NSLog(@"%@-----------", trueID);
-    
-    
+{    
+    NSString* trueID = [CardQueryHelper translateCardNO:cardID];
     __weak RFDIViewController* vcSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         
@@ -244,7 +240,7 @@ static bool _isPushed;
             [vcSelf.navigationController popViewControllerAnimated:YES];
 
         }else{
-            NSInteger enterCount = [CardQueryHelper getJSON:trueID];
+            NSInteger enterCount = [CardQueryHelper checkTicket:trueID];
             if (-1 == enterCount) {
                 [vcSelf.outputView setAsFailia];
                 

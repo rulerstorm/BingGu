@@ -10,5 +10,10 @@
 
 
 @interface CardQueryHelper : NSObject
-+ (NSInteger)getJSON:(NSString*)cardID;
++ (NSInteger)checkTicket:(NSString*)cardID;
++ (NSString*)translateCardNO:(NSString*)cardID;
++ (NSInteger)changeTicketWithOldID:(NSString*)oldID newID:(NSString*)newID;
++ (NSInteger)getMoney:(NSString*)cardID;
++ (NSInteger)updateMoney:(NSString*)ID money:(NSInteger)money;
++ (NSDictionary*)getStatistic:(NSString*)lastID;
 @end

@@ -35,7 +35,7 @@
     [self.buttonPicture setBackgroundImage:[UIImage imageNamed:@"成功"] forState:UIControlStateNormal];
     self.labelEnterCount.text = count;
     self.labelTextMain.text = @"入场次数：";
-    [self.buttonConfig setTitle:@"确定(3)" forState:UIControlStateNormal];
+    [self.buttonConfig setTitle:@"确定" forState:UIControlStateNormal];
     [UIView animateWithDuration:0.5 animations:^{
         self.alpha = 1;
 
@@ -66,6 +66,26 @@
         }
     }];
 }
+
+
+- (void)setAsSuccessWithString:(NSString*)string
+{
+    self.labelIfSuccess.text = @"成功";
+    [self.buttonPicture setBackgroundImage:[UIImage imageNamed:@"成功"] forState:UIControlStateNormal];
+    self.labelEnterCount.text = @"";
+    self.labelTextMain.text = string;
+    [self.buttonConfig setTitle:@"确定" forState:UIControlStateNormal];
+    [UIView animateWithDuration:0.5 animations:^{
+        self.alpha = 1;
+        
+        if ([UIScreen mainScreen].bounds.size.height == 480.0) {
+            self.viewCenter.center = self.center;
+        }else{
+            self.viewCenter.transform = CGAffineTransformMakeTranslation(0, -540);
+        }
+    }];
+}
+
 
 - (void)layoutSubviews
 {
