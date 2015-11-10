@@ -11,17 +11,18 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FeN-L2-Og9">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <animations/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pqf-LQ-i3c">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pqf-LQ-i3c">
                     <rect key="frame" x="46" y="668" width="228" height="262"/>
                     <subviews>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cYZ-qD-9tJ" customClass="UIVisualEffectView">
                             <rect key="frame" x="0.0" y="0.0" width="228" height="262"/>
                             <animations/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P25-83-soE">
+                            <rect key="frame" x="0.0" y="0.0" width="228" height="262"/>
+                            <animations/>
+                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="入场次数：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T90-Tw-4f2">
                             <rect key="frame" x="45" y="151" width="150" height="22"/>
@@ -63,6 +64,7 @@
                         </label>
                     </subviews>
                     <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="228" id="E6c-ON-RVQ"/>
                         <constraint firstAttribute="height" constant="262" id="TxP-Ln-ZiB"/>
@@ -72,12 +74,8 @@
             <animations/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="FeN-L2-Og9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2bS-FE-M7B"/>
-                <constraint firstAttribute="trailing" secondItem="FeN-L2-Og9" secondAttribute="trailing" id="DVi-Or-WOd"/>
-                <constraint firstAttribute="bottom" secondItem="FeN-L2-Og9" secondAttribute="bottom" id="NWZ-B8-0ow"/>
                 <constraint firstItem="Pqf-LQ-i3c" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OPg-B1-arc"/>
                 <constraint firstItem="Pqf-LQ-i3c" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="668" id="bqh-hQ-Dq9"/>
-                <constraint firstItem="FeN-L2-Og9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dyP-TX-qeS"/>
             </constraints>
             <connections>
                 <outlet property="ViewBlur" destination="cYZ-qD-9tJ" id="2iW-wi-Sac"/>

@@ -92,12 +92,12 @@
 {
 //    NSLog(@"sdfsdf");
     [super layoutSubviews];
+//    self.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     
     self.buttonConfig.layer.cornerRadius = 15;
     self.viewCenter.layer.cornerRadius = 10;
     self.viewCenter.layer.masksToBounds = YES;
-//    self.viewCenter.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
-    self.ViewBlur.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+    self.ViewBlur.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     
 
 }
