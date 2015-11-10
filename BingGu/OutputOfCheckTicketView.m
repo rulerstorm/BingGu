@@ -22,6 +22,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *viewCenter;
 @property (weak, nonatomic) IBOutlet UILabel *labelTextMain;
+@property (weak, nonatomic) IBOutlet UIVisualEffectView *ViewBlur;
 
 @end
 
@@ -94,8 +95,11 @@
     
     self.buttonConfig.layer.cornerRadius = 15;
     self.viewCenter.layer.cornerRadius = 10;
+    self.viewCenter.layer.masksToBounds = YES;
+//    self.viewCenter.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+    self.ViewBlur.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
     
-//    self.viewCenter.frame = 
+
 }
 
 - (IBAction)buttonConfigClicked:(id)sender {

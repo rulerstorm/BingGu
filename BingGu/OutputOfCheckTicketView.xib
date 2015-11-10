@@ -16,9 +16,13 @@
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pqf-LQ-i3c">
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pqf-LQ-i3c">
                     <rect key="frame" x="46" y="668" width="228" height="262"/>
                     <subviews>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cYZ-qD-9tJ" customClass="UIVisualEffectView">
+                            <rect key="frame" x="0.0" y="0.0" width="228" height="262"/>
+                            <animations/>
+                        </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="入场次数：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T90-Tw-4f2">
                             <rect key="frame" x="45" y="151" width="150" height="22"/>
                             <animations/>
@@ -59,7 +63,6 @@
                         </label>
                     </subviews>
                     <animations/>
-                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="228" id="E6c-ON-RVQ"/>
                         <constraint firstAttribute="height" constant="262" id="TxP-Ln-ZiB"/>
@@ -77,6 +80,7 @@
                 <constraint firstItem="FeN-L2-Og9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dyP-TX-qeS"/>
             </constraints>
             <connections>
+                <outlet property="ViewBlur" destination="cYZ-qD-9tJ" id="2iW-wi-Sac"/>
                 <outlet property="buttonConfig" destination="l40-8J-3gY" id="ULG-TX-33p"/>
                 <outlet property="buttonPicture" destination="zA3-Hb-URy" id="BYu-is-qaZ"/>
                 <outlet property="labelEnterCount" destination="1UC-vH-A8K" id="oHc-kC-fR0"/>
