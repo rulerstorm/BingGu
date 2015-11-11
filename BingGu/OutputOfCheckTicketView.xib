@@ -11,6 +11,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWY-KH-EPI">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="668"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pqf-LQ-i3c">
                     <rect key="frame" x="46" y="668" width="228" height="262"/>
                     <subviews>
@@ -19,10 +24,10 @@
                             <animations/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
-                        <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P25-83-soE">
+                        <view alpha="0.20000000000000001" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P25-83-soE">
                             <rect key="frame" x="0.0" y="0.0" width="228" height="262"/>
                             <animations/>
-                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="入场次数：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T90-Tw-4f2">
                             <rect key="frame" x="45" y="151" width="150" height="22"/>
@@ -74,8 +79,12 @@
             <animations/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="TWY-KH-EPI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5ZH-fb-Si4"/>
+                <constraint firstItem="TWY-KH-EPI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="81U-FF-eQ7"/>
                 <constraint firstItem="Pqf-LQ-i3c" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OPg-B1-arc"/>
+                <constraint firstItem="Pqf-LQ-i3c" firstAttribute="top" secondItem="TWY-KH-EPI" secondAttribute="bottom" id="VXz-5y-It9"/>
                 <constraint firstItem="Pqf-LQ-i3c" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="668" id="bqh-hQ-Dq9"/>
+                <constraint firstAttribute="trailing" secondItem="TWY-KH-EPI" secondAttribute="trailing" id="td9-5P-x6g"/>
             </constraints>
             <connections>
                 <outlet property="ViewBlur" destination="cYZ-qD-9tJ" id="2iW-wi-Sac"/>

@@ -48,6 +48,14 @@
     }];
 }
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    NSLog(@"sdf");
+    
+    
+    return [super initWithCoder:aDecoder];
+}
+
 
 
 - (void)setAsFailia
@@ -99,7 +107,6 @@
     self.viewCenter.layer.masksToBounds = YES;
     self.ViewBlur.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     
-
 }
 
 - (IBAction)buttonConfigClicked:(id)sender {
