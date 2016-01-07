@@ -41,7 +41,6 @@
 {
     self.navigationItem.title = @"门票更换";
     
-    
     UINib* nib = [UINib nibWithNibName:@"OutputOfCheckTicketView" bundle:nil];
     self.outputView = [nib instantiateWithOwner:nil options:nil][0];
     self.outputView.alpha = 0;

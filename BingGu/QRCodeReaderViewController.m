@@ -220,11 +220,11 @@ static bool _isPushed;
 
         NSInteger enterCount = [CardQueryHelper checkTicket:code];
         if (-1 == enterCount) {
-            [HMAudioTool playAudioWithFilename:@"002.wav"];
+            //[HMAudioTool playAudioWithFilename:@"002.wav"];
             [self.outputView setAsFailia];
             
         }else{
-            [HMAudioTool playAudioWithFilename:@"001.wav"];
+            //[HMAudioTool playAudioWithFilename:@"001.wav"];
             [self.outputView setAsSuccess:[NSString stringWithFormat:@"%ld", (long)enterCount]];
         }
     }
